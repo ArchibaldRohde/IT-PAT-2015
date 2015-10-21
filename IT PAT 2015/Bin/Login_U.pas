@@ -1,0 +1,41 @@
+unit Login_U;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ColorButton, jpeg, ExtCtrls;
+
+type
+  TLogin_Form = class(TForm)
+    lblPOPQuiz: TLabel;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Label3: TLabel;
+    ColorButton1: TColorButton;
+    ColorButton2: TColorButton;
+    Image1: TImage;
+    Image2: TImage;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Login_Form: TLogin_Form;
+
+implementation
+uses Quiz_U, Home_U, New_U;
+
+{$R *.dfm}
+
+procedure TLogin_Form.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+Home_Form.Show;
+end;
+
+end.
