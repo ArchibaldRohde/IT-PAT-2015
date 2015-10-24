@@ -30,7 +30,7 @@ var
 
 implementation
 
-uses Home_U;
+uses Home_U, Quiz_U;
 
 {$R *.dfm}
 

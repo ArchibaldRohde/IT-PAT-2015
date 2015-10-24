@@ -17,8 +17,8 @@ object New_Form: TNew_Form
   object lblPOPQuiz: TLabel
     Left = 208
     Top = 8
-    Width = 143
-    Height = 46
+    Width = 154
+    Height = 42
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack

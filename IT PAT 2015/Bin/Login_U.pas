@@ -30,7 +30,7 @@ var
   Login_Form: TLogin_Form;
 
 implementation
-uses Quiz_U, Home_U, New_U;
+uses Quiz_U, Home_U, New_U, Client_U;
 
 {$R *.dfm}
 
