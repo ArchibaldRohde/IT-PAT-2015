@@ -47,7 +47,7 @@ begin
   sName := edtName.Text;
   sPassword := edtPassword.text;
   sHint := edtHint.text;
-  if sPassword='' OR if(sName= '') OR if(sHint='') then
+  if (sPassword='') OR if(sName= '') OR if(sHint='') then
   begin
     ShowMessage('All fields have not been filled in');
   end

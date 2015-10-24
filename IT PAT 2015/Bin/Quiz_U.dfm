@@ -1,6 +1,6 @@
 object Quiz_Form: TQuiz_Form
-  Left = 310
-  Top = 424
+  Left = 1268
+  Top = 511
   Width = 616
   Height = 389
   Caption = 'Quiz_Form'
@@ -17,8 +17,8 @@ object Quiz_Form: TQuiz_Form
   object lblA: TLabel
     Left = 8
     Top = 112
-    Width = 18
-    Height = 32
+    Width = 30
+    Height = 29
     Caption = 'A'
     Font.Charset = SYMBOL_CHARSET
     Font.Color = clBlack
@@ -30,8 +30,8 @@ object Quiz_Form: TQuiz_Form
   object lblB: TLabel
     Left = 8
     Top = 144
-    Width = 24
-    Height = 32
+    Width = 30
+    Height = 29
     Caption = 'B'
     Font.Charset = SYMBOL_CHARSET
     Font.Color = clBlack
@@ -43,8 +43,8 @@ object Quiz_Form: TQuiz_Form
   object lblC: TLabel
     Left = 8
     Top = 176
-    Width = 21
-    Height = 32
+    Width = 30
+    Height = 29
     Caption = 'C'
     Font.Charset = SYMBOL_CHARSET
     Font.Color = clBlack
@@ -56,8 +56,8 @@ object Quiz_Form: TQuiz_Form
   object lblD: TLabel
     Left = 8
     Top = 208
-    Width = 21
-    Height = 32
+    Width = 30
+    Height = 29
     Caption = 'D'
     Font.Charset = SYMBOL_CHARSET
     Font.Color = clBlack
@@ -82,8 +82,8 @@ object Quiz_Form: TQuiz_Form
   object lblPOPQuiz: TLabel
     Left = 256
     Top = 8
-    Width = 154
-    Height = 42
+    Width = 143
+    Height = 46
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack

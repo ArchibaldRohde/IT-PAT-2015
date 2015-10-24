@@ -43,7 +43,10 @@ procedure TLogin_Form.ColorButton1Click(Sender: TObject);
 var
 sName, sPassword : string;
 begin
-
+//////tydelik/////
+Client_Form.Show;
+Login_Form.Hide;
+/////tydelik/////
 end;
 
 end.
