@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, jpeg, ExtCtrls, ColorButton;
+  Dialogs, StdCtrls, jpeg, ExtCtrls, ColorButton, Datamodule_U;
 
 type
   TNew_Form = class(TForm)
@@ -42,18 +42,40 @@ end;
 
 procedure TNew_Form.ColorButton1Click(Sender: TObject);
 var
-sName, sPassword, sHint : String;
+sNewName, sNewPassword, sNewHint : String;
 begin
-  sName := edtName.Text;
-  sPassword := edtPassword.text;
-  sHint := edtHint.text;
-  if ((sPassword='') OR (sName= '') OR (sHint='')) then
+  sNewName := edtName.Text;
+  sNewPassword := edtPassword.text;
+  sNewHint := edtHint.text;
+  if ((sNewPassword='') OR (sNewName= '') OR (sNewHint='')) then
   begin
     ShowMessage('All fields have not been filled in');
   end
   else
   begin
-    //
+  //
+  Dmod.TableUser.First;
+  while NOT Dmod.TableUser.Eof do
+  begin
+    if Dmod.TableUser['Username'] = sNewName then
+    break;
+    Dmod.TableUser.Next;
+  end;
+  if NOT Dmod.TableUser.Eof then
+  begin
+  MessageDlg('Poephol dit bestaan klaar',mtError,[mbCancel],0);
+  exit;
+  end;
+
+  //
+  Dmod.TableUser.Last;
+  Dmod.TableUser.Insert;
+  Dmod.TableUser['Username'] := sNewName;
+  Dmod.TableUser['Password'] := sNewPassword;
+  Dmod.TableUser['Hint'] := sNewHint;
+  Dmod.TableUser.Post;
+  MessageDlg('Well done ' + sNewName + ' jy is actually in!!!!',mtWarning,[mbOK],0);
+
   end;
 
 

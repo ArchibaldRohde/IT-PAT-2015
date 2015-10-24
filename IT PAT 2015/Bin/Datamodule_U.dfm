@@ -1,10 +1,11 @@
 object Dmod: TDmod
   OldCreateOrder = False
-  Left = 578
-  Top = 140
+  Left = 1501
+  Top = 128
   Height = 150
   Width = 215
   object ADOuser: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=Datab' +
       'ase\Users.mdb;Mode=Share Deny None;Persist Security Info=False;J' +
@@ -16,11 +17,13 @@ object Dmod: TDmod
       'lse;Jet OLEDB:Don'#39't Copy Locale on Compact=False;Jet OLEDB:Compa' +
       'ct Without Replica Repair=False;Jet OLEDB:SFP=False'
     LoginPrompt = False
+    Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 24
     Top = 8
   end
   object TableUser: TADOTable
+    Active = True
     Connection = ADOuser
     CursorType = ctStatic
     TableName = 'User Table'
@@ -28,6 +31,7 @@ object Dmod: TDmod
     Top = 8
   end
   object TableAdmin: TADOTable
+    Active = True
     Connection = ADOuser
     CursorType = ctStatic
     TableName = 'Admin Table'

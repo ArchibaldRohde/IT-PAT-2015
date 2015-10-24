@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 1259
-  Top = 117
+  Left = 1921
+  Top = 592
   Width = 616
   Height = 389
   Caption = 'Client_Form'
@@ -17,8 +17,8 @@ object Client_Form: TClient_Form
   object lblPOPQuiz: TLabel
     Left = 224
     Top = 8
-    Width = 154
-    Height = 42
+    Width = 143
+    Height = 46
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack

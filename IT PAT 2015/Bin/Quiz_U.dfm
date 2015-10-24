@@ -1,6 +1,6 @@
 object Quiz_Form: TQuiz_Form
-  Left = 1266
-  Top = 505
+  Left = 2328
+  Top = 214
   Width = 616
   Height = 389
   Caption = 'Quiz_Form'

@@ -1,6 +1,6 @@
 object New_Form: TNew_Form
-  Left = 650
-  Top = 508
+  Left = 2152
+  Top = 393
   Width = 616
   Height = 389
   Caption = 'New_Form'
