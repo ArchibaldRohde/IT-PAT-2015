@@ -1,6 +1,6 @@
 object Quiz_Form: TQuiz_Form
-  Left = 767
-  Top = 355
+  Left = 1096
+  Top = 317
   BorderStyle = bsNone
   Caption = 'Quiz_Form'
   ClientHeight = 350
@@ -151,7 +151,7 @@ object Quiz_Form: TQuiz_Form
     HoverColor = clTeal
   end
   object btnClose: TBitBtn
-    Left = 560
+    Left = 568
     Top = 0
     Width = 33
     Height = 25

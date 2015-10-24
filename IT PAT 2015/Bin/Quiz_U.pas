@@ -56,6 +56,7 @@ end;
 procedure TQuiz_Form.FormCreate(Sender: TObject);
 begin
 Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
+Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
 /// maak procedure vraag///
 tmrClock.Enabled := true;
 PBclock.Position := 0;

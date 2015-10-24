@@ -1,6 +1,6 @@
 object Login_Form: TLogin_Form
-  Left = 1376
-  Top = 374
+  Left = 218
+  Top = 677
   BorderStyle = bsNone
   Caption = 'Login_Form'
   ClientHeight = 350
@@ -3873,6 +3873,7 @@ object Login_Form: TLogin_Form
     Height = 17
     Caption = 'Forgot Password?'
     TabOrder = 3
+    OnClick = ColorButton2Click
     BackColor = clOlive
     HoverColor = clTeal
   end

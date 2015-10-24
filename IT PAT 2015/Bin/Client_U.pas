@@ -58,6 +58,7 @@ end;
 procedure TClient_Form.FormCreate(Sender: TObject);
 begin
   Client_Form.Left := round((screen.WorkAreaWidth -600)/2);
+  Client_Form.Top := round((screen.WorkAreaHeight -350)/2);
 end;
 
 end.

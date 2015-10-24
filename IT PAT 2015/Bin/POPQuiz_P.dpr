@@ -7,7 +7,8 @@ uses
   Login_U in 'Login_U.pas' {Login_Form},
   New_U in 'New_U.pas' {New_Form},
   Client_U in 'Client_U.pas' {Client_Form},
-  Datamodule_U in 'Datamodule_U.pas' {Dmod: TDataModule};
+  Datamodule_U in 'Datamodule_U.pas' {Dmod: TDataModule},
+  Admin_U in 'Admin_U.pas' {Admin_Form};
 
 {$R *.res}
 
@@ -19,5 +20,6 @@ begin
   Application.CreateForm(TNew_Form, New_Form);
   Application.CreateForm(TClient_Form, Client_Form);
   Application.CreateForm(TDmod, Dmod);
+  Application.CreateForm(TAdmin_Form, Admin_Form);
   Application.Run;
 end.

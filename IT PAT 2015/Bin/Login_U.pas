@@ -23,6 +23,7 @@ type
     procedure ColorButton1Click(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure ColorButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,6 +86,28 @@ end;
 procedure TLogin_Form.FormCreate(Sender: TObject);
 begin
   Login_Form.Left := round((screen.WorkAreaWidth -600)/2);
+  Login_Form.Top := round((screen.WorkAreaHeight -350)/2);
+end;
+
+procedure TLogin_Form.ColorButton2Click(Sender: TObject);
+begin
+  sName := edtName.text;
+
+Dmod.TableUser.First;
+while NOT Dmod.TableUser.Eof  do
+begin //while
+
+   if Dmod.TableUser['Username'] = sName then
+    break;
+
+    Dmod.TableUser.Next;
+end; //while
+  if Dmod.TableUser.Eof then
+  begin  //if
+  MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+  exit;
+  end;   //if
+ MessageDlg('Hint: ' + Dmod.TableUser['Hint'],mtInformation,[mbOK],0);
 end;
 
 end.
