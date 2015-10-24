@@ -1,6 +1,6 @@
 object Home_Form: THome_Form
-  Left = 188
-  Top = 123
+  Left = 335
+  Top = 253
   Width = 616
   Height = 389
   Caption = 'Home_Form'
@@ -16,8 +16,8 @@ object Home_Form: THome_Form
   object lblPOPQuiz: TLabel
     Left = 200
     Top = 8
-    Width = 249
-    Height = 77
+    Width = 267
+    Height = 72
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -29,8 +29,8 @@ object Home_Form: THome_Form
   object Label1: TLabel
     Left = 192
     Top = 88
-    Width = 261
-    Height = 33
+    Width = 267
+    Height = 32
     Caption = 'Are you feeling lucky?'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
