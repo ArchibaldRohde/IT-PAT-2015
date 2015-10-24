@@ -17,8 +17,8 @@ object New_Form: TNew_Form
   object lblPOPQuiz: TLabel
     Left = 208
     Top = 8
-    Width = 154
-    Height = 42
+    Width = 143
+    Height = 46
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -3844,7 +3844,6 @@ object New_Form: TNew_Form
     Height = 21
     Color = clTeal
     TabOrder = 0
-    Text = '<insert name here>'
   end
   object edtPassword: TEdit
     Left = 208
@@ -3853,7 +3852,6 @@ object New_Form: TNew_Form
     Height = 21
     Color = clTeal
     TabOrder = 1
-    Text = '<insert password here>'
   end
   object ColorButton1: TColorButton
     Left = 232
@@ -3879,6 +3877,5 @@ object New_Form: TNew_Form
     Height = 21
     Color = clTeal
     TabOrder = 3
-    Text = '<insert hint here>'
   end
 end

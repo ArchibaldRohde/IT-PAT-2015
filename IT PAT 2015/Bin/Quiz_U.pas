@@ -23,6 +23,7 @@ type
     btnD: TColorButton;
     procedure tmrClockTimer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -48,6 +49,13 @@ end;
 procedure TQuiz_Form.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 Home_Form.Show;
+end;
+
+procedure TQuiz_Form.FormCreate(Sender: TObject);
+begin
+/// maak procedure vraag///
+tmrClock.Enabled := true;
+PBclock.Position := 0;
 end;
 
 end.

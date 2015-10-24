@@ -1,6 +1,6 @@
 object Quiz_Form: TQuiz_Form
-  Left = 1268
-  Top = 511
+  Left = 1266
+  Top = 505
   Width = 616
   Height = 389
   Caption = 'Quiz_Form'
@@ -12,6 +12,7 @@ object Quiz_Form: TQuiz_Form
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lblA: TLabel
