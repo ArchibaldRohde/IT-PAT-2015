@@ -18,6 +18,7 @@ type
     procedure btnAdminClick(Sender: TObject);
     procedure btnNewClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     bAdmin : boolean;
     { Private declarations }
@@ -55,6 +56,11 @@ end;
 procedure THome_Form.btnCloseClick(Sender: TObject);
 begin
   Home_Form.Close;
+end;
+
+procedure THome_Form.FormCreate(Sender: TObject);
+begin
+  Home_Form.Left := round((screen.WorkAreaWidth -600)/2);
 end;
 
 end.

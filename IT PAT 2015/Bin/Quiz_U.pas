@@ -55,6 +55,7 @@ end;
 
 procedure TQuiz_Form.FormCreate(Sender: TObject);
 begin
+Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
 /// maak procedure vraag///
 tmrClock.Enabled := true;
 PBclock.Position := 0;

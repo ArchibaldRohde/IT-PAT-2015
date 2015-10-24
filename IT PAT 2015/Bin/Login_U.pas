@@ -22,6 +22,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ColorButton1Click(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,6 +59,11 @@ procedure TLogin_Form.btnCloseClick(Sender: TObject);
 begin
   Login_Form.Hide;
   Home_Form.Show;
+end;
+
+procedure TLogin_Form.FormCreate(Sender: TObject);
+begin
+  Login_Form.Left := round((screen.WorkAreaWidth -600)/2);
 end;
 
 end.

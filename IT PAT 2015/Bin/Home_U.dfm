@@ -12,6 +12,7 @@ object Home_Form: THome_Form
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel

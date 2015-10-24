@@ -13,6 +13,7 @@ object New_Form: TNew_Form
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
