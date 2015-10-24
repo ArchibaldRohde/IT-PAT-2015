@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ColorButton, jpeg, ExtCtrls;
+  Dialogs, StdCtrls, ColorButton, jpeg, ExtCtrls, Datamodule_U;
 
 type
   TLogin_Form = class(TForm)
@@ -47,6 +47,9 @@ begin
 Client_Form.Show;
 Login_Form.Hide;
 /////tydelik/////
+
+//data//
+
 end;
 
 end.

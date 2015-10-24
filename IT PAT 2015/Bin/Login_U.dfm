@@ -17,8 +17,8 @@ object Login_Form: TLogin_Form
   object lblPOPQuiz: TLabel
     Left = 224
     Top = 8
-    Width = 154
-    Height = 42
+    Width = 143
+    Height = 46
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
