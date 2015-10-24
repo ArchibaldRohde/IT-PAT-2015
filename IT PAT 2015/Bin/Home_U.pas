@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ColorButton, Quiz_U;
+  Dialogs, StdCtrls, ColorButton, Quiz_U, Buttons;
 
 type
   THome_Form = class(TForm)
@@ -13,9 +13,11 @@ type
     btnAdmin: TColorButton;
     btnNew: TColorButton;
     Label1: TLabel;
+    btnClose: TBitBtn;
     procedure btnLoginClick(Sender: TObject);
     procedure btnAdminClick(Sender: TObject);
     procedure btnNewClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private
     bAdmin : boolean;
     { Private declarations }
@@ -48,6 +50,11 @@ procedure THome_Form.btnNewClick(Sender: TObject);
 begin
 New_Form.Show;
 Home_Form.Hide;
+end;
+
+procedure THome_Form.btnCloseClick(Sender: TObject);
+begin
+  Home_Form.Close;
 end;
 
 end.

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ColorButton;
+  Dialogs, StdCtrls, ColorButton, Buttons;
 
 type
   TClient_Form = class(TForm)
@@ -17,8 +17,10 @@ type
     ColorButton2: TColorButton;
     Label4: TLabel;
     ColorButton3: TColorButton;
+    btnClose: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ColorButton1Click(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +46,12 @@ procedure TClient_Form.ColorButton1Click(Sender: TObject);
 begin
 Quiz_Form.Show;
 Client_Form.hide;
+end;
+
+procedure TClient_Form.btnCloseClick(Sender: TObject);
+begin
+  Client_Form.Hide;
+  Home_Form.Show;
 end;
 
 end.

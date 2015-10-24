@@ -1,9 +1,10 @@
 object Login_Form: TLogin_Form
-  Left = 1921
-  Top = 215
-  Width = 616
-  Height = 389
+  Left = 767
+  Top = 354
+  BorderStyle = bsNone
   Caption = 'Login_Form'
+  ClientHeight = 350
+  ClientWidth = 600
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +16,7 @@ object Login_Form: TLogin_Form
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
-    Left = 224
+    Left = 232
     Top = 8
     Width = 143
     Height = 46
@@ -28,21 +29,21 @@ object Login_Form: TLogin_Form
     ParentFont = False
   end
   object Label1: TLabel
-    Left = 208
+    Left = 216
     Top = 72
     Width = 31
     Height = 13
     Caption = 'Name:'
   end
   object Label2: TLabel
-    Left = 208
+    Left = 216
     Top = 128
     Width = 50
     Height = 13
     Caption = 'Password:'
   end
   object Label3: TLabel
-    Left = 216
+    Left = 224
     Top = 200
     Width = 29
     Height = 41
@@ -55,7 +56,7 @@ object Login_Form: TLogin_Form
     ParentFont = False
   end
   object Image1: TImage
-    Left = 0
+    Left = 8
     Top = 24
     Width = 193
     Height = 281
@@ -1937,7 +1938,7 @@ object Login_Form: TLogin_Form
     Stretch = True
   end
   object Image2: TImage
-    Left = 376
+    Left = 384
     Top = 24
     Width = 217
     Height = 281
@@ -3830,7 +3831,7 @@ object Login_Form: TLogin_Form
     Stretch = True
   end
   object Edit1: TEdit
-    Left = 208
+    Left = 216
     Top = 88
     Width = 145
     Height = 21
@@ -3839,7 +3840,7 @@ object Login_Form: TLogin_Form
     Text = '<insert name here>'
   end
   object Edit2: TEdit
-    Left = 208
+    Left = 216
     Top = 144
     Width = 145
     Height = 21
@@ -3848,7 +3849,7 @@ object Login_Form: TLogin_Form
     Text = '<insert password here>'
   end
   object ColorButton1: TColorButton
-    Left = 248
+    Left = 256
     Top = 200
     Width = 89
     Height = 33
@@ -3865,7 +3866,7 @@ object Login_Form: TLogin_Form
     HoverColor = clTeal
   end
   object ColorButton2: TColorButton
-    Left = 256
+    Left = 264
     Top = 168
     Width = 97
     Height = 17
@@ -3873,5 +3874,15 @@ object Login_Form: TLogin_Form
     TabOrder = 3
     BackColor = clOlive
     HoverColor = clTeal
+  end
+  object btnClose: TBitBtn
+    Left = 568
+    Top = 0
+    Width = 33
+    Height = 25
+    Caption = ' '
+    TabOrder = 4
+    OnClick = btnCloseClick
+    Kind = bkAbort
   end
 end

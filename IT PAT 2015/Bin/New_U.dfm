@@ -1,9 +1,10 @@
 object New_Form: TNew_Form
-  Left = 2152
-  Top = 393
-  Width = 616
-  Height = 389
+  Left = 768
+  Top = 355
+  BorderStyle = bsNone
   Caption = 'New_Form'
+  ClientHeight = 350
+  ClientWidth = 600
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +16,7 @@ object New_Form: TNew_Form
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
-    Left = 208
+    Left = 216
     Top = 8
     Width = 143
     Height = 46
@@ -28,21 +29,21 @@ object New_Form: TNew_Form
     ParentFont = False
   end
   object lblName: TLabel
-    Left = 208
+    Left = 216
     Top = 64
     Width = 31
     Height = 13
     Caption = 'Name:'
   end
   object lblPassword: TLabel
-    Left = 208
+    Left = 216
     Top = 120
     Width = 50
     Height = 13
     Caption = 'Password:'
   end
   object Label3: TLabel
-    Left = 200
+    Left = 208
     Top = 240
     Width = 29
     Height = 41
@@ -55,7 +56,7 @@ object New_Form: TNew_Form
     ParentFont = False
   end
   object imgWoman: TImage
-    Left = 377
+    Left = 385
     Top = 24
     Width = 217
     Height = 281
@@ -1948,7 +1949,7 @@ object New_Form: TNew_Form
     Stretch = True
   end
   object imgMan: TImage
-    Left = 0
+    Left = 8
     Top = 24
     Width = 193
     Height = 281
@@ -3831,14 +3832,14 @@ object New_Form: TNew_Form
     Transparent = True
   end
   object lblHint: TLabel
-    Left = 208
+    Left = 216
     Top = 176
     Width = 148
     Height = 13
     Caption = 'Hint: (if Password is forgotten)'
   end
   object edtName: TEdit
-    Left = 208
+    Left = 216
     Top = 80
     Width = 145
     Height = 21
@@ -3846,7 +3847,7 @@ object New_Form: TNew_Form
     TabOrder = 0
   end
   object edtPassword: TEdit
-    Left = 208
+    Left = 216
     Top = 136
     Width = 145
     Height = 21
@@ -3854,7 +3855,7 @@ object New_Form: TNew_Form
     TabOrder = 1
   end
   object ColorButton1: TColorButton
-    Left = 232
+    Left = 240
     Top = 240
     Width = 121
     Height = 33
@@ -3871,11 +3872,21 @@ object New_Form: TNew_Form
     HoverColor = clTeal
   end
   object edtHint: TEdit
-    Left = 208
+    Left = 216
     Top = 192
     Width = 145
     Height = 21
     Color = clTeal
     TabOrder = 3
+  end
+  object btnClose: TBitBtn
+    Left = 568
+    Top = 0
+    Width = 33
+    Height = 25
+    Caption = ' '
+    TabOrder = 4
+    OnClick = btnCloseClick
+    Kind = bkAbort
   end
 end

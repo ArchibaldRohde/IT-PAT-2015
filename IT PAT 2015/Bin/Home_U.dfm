@@ -1,9 +1,10 @@
 object Home_Form: THome_Form
-  Left = 2345
-  Top = 590
-  Width = 616
-  Height = 389
+  Left = 768
+  Top = 355
+  BorderStyle = bsNone
   Caption = 'Home_Form'
+  ClientHeight = 350
+  ClientWidth = 600
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +15,8 @@ object Home_Form: THome_Form
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
-    Left = 200
-    Top = 8
+    Left = 184
+    Top = 16
     Width = 249
     Height = 77
     Caption = 'POPQuiz'
@@ -27,8 +28,8 @@ object Home_Form: THome_Form
     ParentFont = False
   end
   object Label1: TLabel
-    Left = 192
-    Top = 88
+    Left = 176
+    Top = 96
     Width = 261
     Height = 33
     Caption = 'Are you feeling lucky?'
@@ -40,8 +41,8 @@ object Home_Form: THome_Form
     ParentFont = False
   end
   object btnLogin: TColorButton
-    Left = 144
-    Top = 136
+    Left = 128
+    Top = 144
     Width = 113
     Height = 57
     Caption = 'btnLogin'
@@ -51,8 +52,8 @@ object Home_Form: THome_Form
     HoverColor = clTeal
   end
   object btnAdmin: TColorButton
-    Left = 264
-    Top = 136
+    Left = 248
+    Top = 144
     Width = 113
     Height = 57
     Caption = 'btnAdmin'
@@ -62,8 +63,8 @@ object Home_Form: THome_Form
     HoverColor = clTeal
   end
   object btnNew: TColorButton
-    Left = 384
-    Top = 136
+    Left = 368
+    Top = 144
     Width = 113
     Height = 57
     Caption = 'btnNew'
@@ -71,5 +72,15 @@ object Home_Form: THome_Form
     OnClick = btnNewClick
     BackColor = clOlive
     HoverColor = clTeal
+  end
+  object btnClose: TBitBtn
+    Left = 568
+    Top = 0
+    Width = 33
+    Height = 25
+    Caption = ' '
+    TabOrder = 3
+    OnClick = btnCloseClick
+    Kind = bkAbort
   end
 end

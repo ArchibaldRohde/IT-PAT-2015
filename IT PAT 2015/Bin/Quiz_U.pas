@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, ComCtrls, ColorButton;
+  Dialogs, StdCtrls, ExtCtrls, ComCtrls, ColorButton, Buttons;
 
 type
   TQuiz_Form = class(TForm)
@@ -21,9 +21,11 @@ type
     btnB: TColorButton;
     btnC: TColorButton;
     btnD: TColorButton;
+    btnClose: TBitBtn;
     procedure tmrClockTimer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -37,7 +39,7 @@ var
 implementation
 
 {$R *.dfm}
-uses Home_U, Login_U, New_U;
+uses Home_U, Login_U, New_U, Client_U;
 
 procedure TQuiz_Form.tmrClockTimer(Sender: TObject);
 begin
@@ -56,6 +58,12 @@ begin
 /// maak procedure vraag///
 tmrClock.Enabled := true;
 PBclock.Position := 0;
+end;
+
+procedure TQuiz_Form.btnCloseClick(Sender: TObject);
+begin
+  Quiz_Form.Hide;
+  Client_Form.Show;
 end;
 
 end.

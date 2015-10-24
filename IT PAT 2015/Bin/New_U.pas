@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, jpeg, ExtCtrls, ColorButton, Datamodule_U;
+  Dialogs, StdCtrls, jpeg, ExtCtrls, ColorButton, Datamodule_U, Buttons;
 
 type
   TNew_Form = class(TForm)
@@ -19,8 +19,10 @@ type
     imgMan: TImage;
     lblHint: TLabel;
     edtHint: TEdit;
+    btnClose: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ColorButton1Click(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,10 +78,18 @@ begin
   Dmod.TableUser.Post;
   MessageDlg('Well done ' + sNewName + ' jy is actually in!!!!',mtWarning,[mbOK],0);
 
+  New_Form.Hide;
+  Home_Form.Show;
   end;
 
 
 
+end;
+
+procedure TNew_Form.btnCloseClick(Sender: TObject);
+begin
+  New_Form.Hide;
+  Home_Form.Show;
 end;
 
 end.

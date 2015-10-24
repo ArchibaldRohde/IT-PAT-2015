@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ColorButton, jpeg, ExtCtrls, Datamodule_U;
+  Dialogs, StdCtrls, ColorButton, jpeg, ExtCtrls, Datamodule_U, Buttons;
 
 type
   TLogin_Form = class(TForm)
@@ -18,8 +18,10 @@ type
     ColorButton2: TColorButton;
     Image1: TImage;
     Image2: TImage;
+    btnClose: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ColorButton1Click(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +52,12 @@ Login_Form.Hide;
 
 //data//
 
+end;
+
+procedure TLogin_Form.btnCloseClick(Sender: TObject);
+begin
+  Login_Form.Hide;
+  Home_Form.Show;
 end;
 
 end.

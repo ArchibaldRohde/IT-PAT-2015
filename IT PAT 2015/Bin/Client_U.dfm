@@ -1,9 +1,10 @@
 object Client_Form: TClient_Form
-  Left = 1921
-  Top = 592
-  Width = 616
-  Height = 389
+  Left = 768
+  Top = 355
+  BorderStyle = bsNone
   Caption = 'Client_Form'
+  ClientHeight = 350
+  ClientWidth = 600
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -153,5 +154,15 @@ object Client_Form: TClient_Form
     TabOrder = 3
     BackColor = clOlive
     HoverColor = clTeal
+  end
+  object btnClose: TBitBtn
+    Left = 568
+    Top = 0
+    Width = 33
+    Height = 25
+    Caption = ' '
+    TabOrder = 4
+    OnClick = btnCloseClick
+    Kind = bkAbort
   end
 end

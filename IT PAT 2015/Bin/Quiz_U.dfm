@@ -1,9 +1,10 @@
 object Quiz_Form: TQuiz_Form
-  Left = 2328
-  Top = 214
-  Width = 616
-  Height = 389
+  Left = 767
+  Top = 355
+  BorderStyle = bsNone
   Caption = 'Quiz_Form'
+  ClientHeight = 350
+  ClientWidth = 600
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -148,6 +149,16 @@ object Quiz_Form: TQuiz_Form
     TabOrder = 4
     BackColor = clOlive
     HoverColor = clTeal
+  end
+  object btnClose: TBitBtn
+    Left = 560
+    Top = 0
+    Width = 33
+    Height = 25
+    Caption = ' '
+    TabOrder = 5
+    OnClick = btnCloseClick
+    Kind = bkAbort
   end
   object tmrClock: TTimer
     OnTimer = tmrClockTimer
