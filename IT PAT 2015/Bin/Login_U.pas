@@ -19,6 +19,7 @@ type
     Image1: TImage;
     Image2: TImage;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure ColorButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,6 +37,13 @@ uses Quiz_U, Home_U, New_U;
 procedure TLogin_Form.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 Home_Form.Show;
+end;
+
+procedure TLogin_Form.ColorButton1Click(Sender: TObject);
+var
+sName, sPassword : string;
+begin
+
 end;
 
 end.

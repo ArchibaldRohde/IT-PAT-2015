@@ -1,6 +1,6 @@
 object New_Form: TNew_Form
-  Left = 1976
-  Top = 222
+  Left = 250
+  Top = 250
   Width = 616
   Height = 389
   Caption = 'New_Form'
@@ -17,8 +17,8 @@ object New_Form: TNew_Form
   object lblPOPQuiz: TLabel
     Left = 208
     Top = 8
-    Width = 143
-    Height = 46
+    Width = 154
+    Height = 42
     Caption = 'POPQuiz'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -27,14 +27,14 @@ object New_Form: TNew_Form
     Font.Style = []
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblName: TLabel
     Left = 208
     Top = 64
     Width = 31
     Height = 13
     Caption = 'Name:'
   end
-  object Label2: TLabel
+  object lblPassword: TLabel
     Left = 208
     Top = 120
     Width = 50
@@ -43,7 +43,7 @@ object New_Form: TNew_Form
   end
   object Label3: TLabel
     Left = 200
-    Top = 184
+    Top = 240
     Width = 29
     Height = 41
     Caption = 'B'
@@ -54,7 +54,7 @@ object New_Form: TNew_Form
     Font.Style = []
     ParentFont = False
   end
-  object Image2: TImage
+  object imgWoman: TImage
     Left = 377
     Top = 24
     Width = 217
@@ -1947,7 +1947,7 @@ object New_Form: TNew_Form
     Proportional = True
     Stretch = True
   end
-  object Image1: TImage
+  object imgMan: TImage
     Left = 0
     Top = 24
     Width = 193
@@ -3828,8 +3828,16 @@ object New_Form: TNew_Form
       1451450014514500145145001451450014514500145145007FFFD9}
     Proportional = True
     Stretch = True
+    Transparent = True
   end
-  object Edit1: TEdit
+  object lblHint: TLabel
+    Left = 208
+    Top = 176
+    Width = 148
+    Height = 13
+    Caption = 'Hint: (if Password is forgotten)'
+  end
+  object edtName: TEdit
     Left = 208
     Top = 80
     Width = 145
@@ -3838,7 +3846,7 @@ object New_Form: TNew_Form
     TabOrder = 0
     Text = '<insert name here>'
   end
-  object Edit2: TEdit
+  object edtPassword: TEdit
     Left = 208
     Top = 136
     Width = 145
@@ -3849,7 +3857,7 @@ object New_Form: TNew_Form
   end
   object ColorButton1: TColorButton
     Left = 232
-    Top = 184
+    Top = 240
     Width = 121
     Height = 33
     Caption = 'Create User'
@@ -3863,5 +3871,14 @@ object New_Form: TNew_Form
     OnClick = ColorButton1Click
     BackColor = clOlive
     HoverColor = clTeal
+  end
+  object edtHint: TEdit
+    Left = 208
+    Top = 192
+    Width = 145
+    Height = 21
+    Color = clTeal
+    TabOrder = 3
+    Text = '<insert hint here>'
   end
 end

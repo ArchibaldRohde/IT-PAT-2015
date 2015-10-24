@@ -9,14 +9,16 @@ uses
 type
   TNew_Form = class(TForm)
     lblPOPQuiz: TLabel;
-    Label1: TLabel;
-    Edit1: TEdit;
-    Label2: TLabel;
-    Edit2: TEdit;
+    lblName: TLabel;
+    edtName: TEdit;
+    lblPassword: TLabel;
+    edtPassword: TEdit;
     Label3: TLabel;
     ColorButton1: TColorButton;
-    Image2: TImage;
-    Image1: TImage;
+    imgWoman: TImage;
+    imgMan: TImage;
+    lblHint: TLabel;
+    edtHint: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure ColorButton1Click(Sender: TObject);
   private
@@ -40,8 +42,21 @@ end;
 
 procedure TNew_Form.ColorButton1Click(Sender: TObject);
 var
-sName, sPassword : String;
+sName, sPassword, sHint : String;
 begin
+  sName := edtName.Text;
+  sPassword := edtPassword.text;
+  sHint := edtHint.text;
+  if sPassword='' OR if(sName= '') OR if(sHint='') then
+  begin
+    ShowMessage('All fields have not been filled in');
+  end
+  else
+  begin
+    //
+  end;
+
+
 
 end;
 
