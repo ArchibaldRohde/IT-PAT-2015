@@ -1,6 +1,6 @@
 object Login_Form: TLogin_Form
-  Left = 767
-  Top = 354
+  Left = 1376
+  Top = 374
   BorderStyle = bsNone
   Caption = 'Login_Form'
   ClientHeight = 350
@@ -3831,7 +3831,7 @@ object Login_Form: TLogin_Form
     Proportional = True
     Stretch = True
   end
-  object Edit1: TEdit
+  object edtName: TEdit
     Left = 216
     Top = 88
     Width = 145
@@ -3840,7 +3840,7 @@ object Login_Form: TLogin_Form
     TabOrder = 0
     Text = '<insert name here>'
   end
-  object Edit2: TEdit
+  object edtPassword: TEdit
     Left = 216
     Top = 144
     Width = 145

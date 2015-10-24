@@ -10,9 +10,9 @@ type
   TLogin_Form = class(TForm)
     lblPOPQuiz: TLabel;
     Label1: TLabel;
-    Edit1: TEdit;
+    edtName: TEdit;
     Label2: TLabel;
-    Edit2: TEdit;
+    edtPassword: TEdit;
     Label3: TLabel;
     ColorButton1: TColorButton;
     ColorButton2: TColorButton;
@@ -26,6 +26,7 @@ type
   private
     { Private declarations }
   public
+  sName, sPassword : string;
     { Public declarations }
   end;
 
@@ -43,17 +44,37 @@ Home_Form.Show;
 end;
 
 procedure TLogin_Form.ColorButton1Click(Sender: TObject);
-var
-sName, sPassword : string;
-begin
-//////tydelik/////
+begin  //pro
+sName := edtName.text;
+sPassword := edtPassword.text;
+
+
+Dmod.TableUser.First;
+while NOT Dmod.TableUser.Eof  do
+begin //while
+
+ if Dmod.TableUser['Username'] = sName then
+    break;
+
+    Dmod.TableUser.Next;
+end; //while
+  if Dmod.TableUser.Eof then
+  begin  //if
+  MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+  exit;
+  end;   //if
+
+  if NOT (Dmod.TableUser['Password'] = sPassword) then
+  begin  //if pass
+  MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
+  exit;
+  end;   //if pass
+
+
 Client_Form.Show;
 Login_Form.Hide;
-/////tydelik/////
 
-//data//
-
-end;
+end; //pro
 
 procedure TLogin_Form.btnCloseClick(Sender: TObject);
 begin

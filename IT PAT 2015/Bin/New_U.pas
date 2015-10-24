@@ -58,7 +58,7 @@ begin
   begin
   //
   Dmod.TableUser.First;
-  while NOT Dmod.TableUser.Eof do
+  while NOT Dmod.TableUser.EOF do
   begin
     if Dmod.TableUser['Username'] = sNewName then
     break;
