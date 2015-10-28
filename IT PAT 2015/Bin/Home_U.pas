@@ -12,7 +12,7 @@ type
     btnLogin: TColorButton;
     btnAdmin: TColorButton;
     btnNew: TColorButton;
-    Label1: TLabel;
+    lblLucky: TLabel;
     btnClose: TBitBtn;
     procedure btnLoginClick(Sender: TObject);
     procedure btnAdminClick(Sender: TObject);

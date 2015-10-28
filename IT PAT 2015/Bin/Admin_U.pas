@@ -9,10 +9,9 @@ uses
 type
   TAdmin_Form = class(TForm)
     btnClose: TBitBtn;
-    ColorButton3: TColorButton;
-    ColorButton1: TColorButton;
-    ColorButton2: TColorButton;
-    ColorButton4: TColorButton;
+    btnEdit: TColorButton;
+    btnAdd: TColorButton;
+    btnDelete: TColorButton;
     ListBox1: TListBox;
     lblPOPQuiz: TLabel;
     procedure btnCloseClick(Sender: TObject);

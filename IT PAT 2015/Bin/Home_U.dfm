@@ -1,6 +1,6 @@
 object Home_Form: THome_Form
-  Left = 1342
-  Top = 709
+  Left = 2087
+  Top = 428
   BorderStyle = bsNone
   Caption = 'Home_Form'
   ClientHeight = 350
@@ -28,7 +28,7 @@ object Home_Form: THome_Form
     Font.Style = []
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblLucky: TLabel
     Left = 176
     Top = 96
     Width = 261

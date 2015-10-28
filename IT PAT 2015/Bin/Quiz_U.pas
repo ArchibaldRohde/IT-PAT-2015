@@ -24,8 +24,9 @@ type
     btnClose: TBitBtn;
     procedure tmrClockTimer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormCreate(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
+    procedure Go(path : string);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -53,19 +54,26 @@ begin
 Home_Form.Show;
 end;
 
-procedure TQuiz_Form.FormCreate(Sender: TObject);
+procedure TQuiz_Form.btnCloseClick(Sender: TObject);
+begin
+  Quiz_Form.Hide;
+  Client_Form.Show;
+end;
+
+procedure TQuiz_Form.Go(path: string);
+begin
+//
+end;
+
+procedure TQuiz_Form.FormShow(Sender: TObject);
 begin
 Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
 Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
 /// maak procedure vraag///
 tmrClock.Enabled := true;
 PBclock.Position := 0;
-end;
 
-procedure TQuiz_Form.btnCloseClick(Sender: TObject);
-begin
-  Quiz_Form.Hide;
-  Client_Form.Show;
+Go('quizzes\'+Client_Form.quiz+'.txt');
 end;
 
 end.

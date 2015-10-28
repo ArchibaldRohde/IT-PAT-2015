@@ -1,7 +1,7 @@
 object Dmod: TDmod
   OldCreateOrder = False
-  Left = 1501
-  Top = 128
+  Left = 1703
+  Top = 123
   Height = 150
   Width = 215
   object ADOuser: TADOConnection

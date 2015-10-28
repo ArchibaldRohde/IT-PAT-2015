@@ -1,6 +1,6 @@
 object New_Form: TNew_Form
-  Left = 784
-  Top = 698
+  Left = 1971
+  Top = 275
   BorderStyle = bsNone
   Caption = 'New_Form'
   ClientHeight = 350
@@ -43,7 +43,7 @@ object New_Form: TNew_Form
     Height = 13
     Caption = 'Password:'
   end
-  object Label3: TLabel
+  object lblHand: TLabel
     Left = 208
     Top = 240
     Width = 29
@@ -3855,7 +3855,7 @@ object New_Form: TNew_Form
     Color = clTeal
     TabOrder = 1
   end
-  object ColorButton1: TColorButton
+  object btnCreateUser: TColorButton
     Left = 240
     Top = 240
     Width = 121
@@ -3868,7 +3868,7 @@ object New_Form: TNew_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    OnClick = ColorButton1Click
+    OnClick = btnCreateUserClick
     BackColor = clOlive
     HoverColor = clTeal
   end

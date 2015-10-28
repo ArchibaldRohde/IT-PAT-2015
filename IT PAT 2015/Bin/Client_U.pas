@@ -9,22 +9,23 @@ uses
 type
   TClient_Form = class(TForm)
     lblPOPQuiz: TLabel;
-    ListBox1: TListBox;
-    Label1: TLabel;
-    Label3: TLabel;
-    ColorButton1: TColorButton;
-    Label2: TLabel;
-    ColorButton2: TColorButton;
-    Label4: TLabel;
-    ColorButton3: TColorButton;
+    LBquiz: TListBox;
+    lblPick: TLabel;
+    lblhand3: TLabel;
+    btnPlay: TColorButton;
+    lblhand2: TLabel;
+    btnHigh: TColorButton;
+    lblhand1: TLabel;
+    btnMy: TColorButton;
     btnClose: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure ColorButton1Click(Sender: TObject);
+    procedure btnPlayClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
+  quiz : string;
     { Public declarations }
   end;
 
@@ -43,10 +44,20 @@ begin
 Home_Form.Show;
 end;
 
-procedure TClient_Form.ColorButton1Click(Sender: TObject);
+procedure TClient_Form.btnPlayClick(Sender: TObject);
+var
+buttonselected : integer;
 begin
-Quiz_Form.Show;
-Client_Form.hide;
+buttonselected := MessageDlg('You have selected '+ LBquiz.Items[LBquiz.ItemIndex] + '. Are you shure you feel up to the test?' ,mtConfirmation,mbOKCancel,0);
+
+if buttonselected = mrOK then
+begin
+  quiz := LBquiz.Items[LBquiz.ItemIndex];
+  Quiz_Form.Show;
+  Client_Form.hide;
+end;
+
+
 end;
 
 procedure TClient_Form.btnCloseClick(Sender: TObject);
@@ -55,10 +66,11 @@ begin
   Home_Form.Show;
 end;
 
-procedure TClient_Form.FormCreate(Sender: TObject);
+procedure TClient_Form.FormShow(Sender: TObject);
 begin
-  Client_Form.Left := round((screen.WorkAreaWidth -600)/2);
-  Client_Form.Top := round((screen.WorkAreaHeight -350)/2);
+Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
+Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
+
 end;
 
 end.

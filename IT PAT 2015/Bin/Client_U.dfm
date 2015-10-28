@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 352
-  Top = 307
+  Left = 863
+  Top = 600
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350
@@ -13,7 +13,7 @@ object Client_Form: TClient_Form
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
-  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
@@ -29,14 +29,14 @@ object Client_Form: TClient_Form
     Font.Style = []
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblPick: TLabel
     Left = 104
     Top = 72
     Width = 69
     Height = 13
     Caption = 'Pick your quiz:'
   end
-  object Label3: TLabel
+  object lblhand3: TLabel
     Left = 376
     Top = 256
     Width = 29
@@ -49,7 +49,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ParentFont = False
   end
-  object Label2: TLabel
+  object lblhand2: TLabel
     Left = 376
     Top = 184
     Width = 25
@@ -62,7 +62,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ParentFont = False
   end
-  object Label4: TLabel
+  object lblhand1: TLabel
     Left = 376
     Top = 112
     Width = 35
@@ -75,7 +75,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ParentFont = False
   end
-  object ListBox1: TListBox
+  object LBquiz: TListBox
     Left = 96
     Top = 88
     Width = 273
@@ -90,7 +90,7 @@ object Client_Form: TClient_Form
     Items.Strings = (
       '1'
       '2'
-      '3'
+      'Johan'
       '4'
       '5'
       '6'
@@ -107,7 +107,7 @@ object Client_Form: TClient_Form
     ParentFont = False
     TabOrder = 0
   end
-  object ColorButton1: TColorButton
+  object btnPlay: TColorButton
     Left = 408
     Top = 256
     Width = 121
@@ -120,11 +120,11 @@ object Client_Form: TClient_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    OnClick = ColorButton1Click
+    OnClick = btnPlayClick
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object ColorButton2: TColorButton
+  object btnHigh: TColorButton
     Left = 408
     Top = 184
     Width = 121
@@ -140,7 +140,7 @@ object Client_Form: TClient_Form
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object ColorButton3: TColorButton
+  object btnMy: TColorButton
     Left = 408
     Top = 112
     Width = 121

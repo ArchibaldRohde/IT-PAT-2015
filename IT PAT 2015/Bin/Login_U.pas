@@ -9,21 +9,21 @@ uses
 type
   TLogin_Form = class(TForm)
     lblPOPQuiz: TLabel;
-    Label1: TLabel;
+    lblName: TLabel;
     edtName: TEdit;
-    Label2: TLabel;
+    lblPass: TLabel;
     edtPassword: TEdit;
-    Label3: TLabel;
-    ColorButton1: TColorButton;
-    ColorButton2: TColorButton;
-    Image1: TImage;
-    Image2: TImage;
+    lblHand: TLabel;
+    btnLogin: TColorButton;
+    btnForgot: TColorButton;
+    imgMan: TImage;
+    imgWoman: TImage;
     btnClose: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure ColorButton1Click(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure ColorButton2Click(Sender: TObject);
+    procedure btnForgotClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,7 +44,7 @@ begin
 Home_Form.Show;
 end;
 
-procedure TLogin_Form.ColorButton1Click(Sender: TObject);
+procedure TLogin_Form.btnLoginClick(Sender: TObject);
 begin  //pro
 sName := edtName.text;
 sPassword := edtPassword.text;
@@ -89,7 +89,7 @@ begin
   Login_Form.Top := round((screen.WorkAreaHeight -350)/2);
 end;
 
-procedure TLogin_Form.ColorButton2Click(Sender: TObject);
+procedure TLogin_Form.btnForgotClick(Sender: TObject);
 begin
   sName := edtName.text;
 

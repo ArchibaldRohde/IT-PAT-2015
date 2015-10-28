@@ -13,15 +13,15 @@ type
     edtName: TEdit;
     lblPassword: TLabel;
     edtPassword: TEdit;
-    Label3: TLabel;
-    ColorButton1: TColorButton;
+    lblHand: TLabel;
+    btnCreateUser: TColorButton;
     imgWoman: TImage;
     imgMan: TImage;
     lblHint: TLabel;
     edtHint: TEdit;
     btnClose: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure ColorButton1Click(Sender: TObject);
+    procedure btnCreateUserClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -43,7 +43,7 @@ begin
 Home_Form.Show;
 end;
 
-procedure TNew_Form.ColorButton1Click(Sender: TObject);
+procedure TNew_Form.btnCreateUserClick(Sender: TObject);
 var
 sNewName, sNewPassword, sNewHint : String;
 begin
@@ -66,7 +66,7 @@ begin
   end;
   if NOT Dmod.TableUser.Eof then
   begin
-  MessageDlg('Poephol dit bestaan klaar',mtError,[mbCancel],0);
+  MessageDlg('Username exists!',mtError,[mbCancel],0);
   exit;
   end;
 
@@ -77,7 +77,7 @@ begin
   Dmod.TableUser['Password'] := sNewPassword;
   Dmod.TableUser['Hint'] := sNewHint;
   Dmod.TableUser.Post;
-  MessageDlg('Well done ' + sNewName + ' jy is actually in!!!!',mtWarning,[mbOK],0);
+  MessageDlg('Well done ' + sNewName + ' jy is `n poephol!!!!',mtWarning,[mbOK],0);
 
   New_Form.Hide;
   Home_Form.Show;

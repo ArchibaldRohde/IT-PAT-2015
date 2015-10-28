@@ -1,6 +1,6 @@
 object Admin_Form: TAdmin_Form
-  Left = 967
-  Top = 306
+  Left = 2231
+  Top = 499
   BorderStyle = bsNone
   Caption = 'Admin_Form'
   ClientHeight = 350
@@ -38,7 +38,7 @@ object Admin_Form: TAdmin_Form
     OnClick = btnCloseClick
     Kind = bkAbort
   end
-  object ColorButton3: TColorButton
+  object btnEdit: TColorButton
     Left = 344
     Top = 80
     Width = 121
@@ -54,7 +54,7 @@ object Admin_Form: TAdmin_Form
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object ColorButton1: TColorButton
+  object btnAdd: TColorButton
     Left = 344
     Top = 120
     Width = 121
@@ -70,7 +70,7 @@ object Admin_Form: TAdmin_Form
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object ColorButton2: TColorButton
+  object btnDelete: TColorButton
     Left = 344
     Top = 160
     Width = 121
@@ -83,22 +83,6 @@ object Admin_Form: TAdmin_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    BackColor = clOlive
-    HoverColor = clTeal
-  end
-  object ColorButton4: TColorButton
-    Left = 344
-    Top = 216
-    Width = 121
-    Height = 33
-    Caption = 'View Quizes'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 4
     BackColor = clOlive
     HoverColor = clTeal
   end
@@ -132,6 +116,6 @@ object Admin_Form: TAdmin_Form
       '15'
       '16')
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
   end
 end

@@ -1,6 +1,6 @@
 object Login_Form: TLogin_Form
-  Left = 218
-  Top = 677
+  Left = 2303
+  Top = 371
   BorderStyle = bsNone
   Caption = 'Login_Form'
   ClientHeight = 350
@@ -29,21 +29,21 @@ object Login_Form: TLogin_Form
     Font.Style = []
     ParentFont = False
   end
-  object Label1: TLabel
+  object lblName: TLabel
     Left = 216
     Top = 72
     Width = 31
     Height = 13
     Caption = 'Name:'
   end
-  object Label2: TLabel
+  object lblPass: TLabel
     Left = 216
     Top = 128
     Width = 50
     Height = 13
     Caption = 'Password:'
   end
-  object Label3: TLabel
+  object lblHand: TLabel
     Left = 224
     Top = 200
     Width = 29
@@ -56,7 +56,7 @@ object Login_Form: TLogin_Form
     Font.Style = []
     ParentFont = False
   end
-  object Image1: TImage
+  object imgMan: TImage
     Left = 8
     Top = 24
     Width = 193
@@ -1938,7 +1938,7 @@ object Login_Form: TLogin_Form
     Proportional = True
     Stretch = True
   end
-  object Image2: TImage
+  object imgWoman: TImage
     Left = 384
     Top = 24
     Width = 217
@@ -3849,7 +3849,7 @@ object Login_Form: TLogin_Form
     TabOrder = 1
     Text = '<insert password here>'
   end
-  object ColorButton1: TColorButton
+  object btnLogin: TColorButton
     Left = 256
     Top = 200
     Width = 89
@@ -3862,18 +3862,18 @@ object Login_Form: TLogin_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    OnClick = ColorButton1Click
+    OnClick = btnLoginClick
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object ColorButton2: TColorButton
+  object btnForgot: TColorButton
     Left = 264
     Top = 168
     Width = 97
     Height = 17
     Caption = 'Forgot Password?'
     TabOrder = 3
-    OnClick = ColorButton2Click
+    OnClick = btnForgotClick
     BackColor = clOlive
     HoverColor = clTeal
   end
