@@ -53,7 +53,6 @@ buttonselected := MessageDlg('You have selected '+ LBquiz.Items[LBquiz.ItemIndex
 if buttonselected = mrOK then
 begin
   quiz := LBquiz.Items[LBquiz.ItemIndex];
-  Quiz_Form.Enabled := true;
   Quiz_Form.Show;
   Client_Form.hide;
 end;

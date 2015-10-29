@@ -14,6 +14,7 @@ object Quiz_Form: TQuiz_Form
   OldCreateOrder = False
   OnActivate = FormActivate
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lblA: TLabel

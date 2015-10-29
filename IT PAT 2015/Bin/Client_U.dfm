@@ -88,7 +88,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ItemHeight = 19
     Items.Strings = (
-      '1'
+      'Afrikaans Gr 10'
       '2'
       'Johan'
       '4'
