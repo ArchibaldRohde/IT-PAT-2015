@@ -26,9 +26,10 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCloseClick(Sender: TObject);
     procedure Go(path : string);
-    procedure FormShow(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
 
   private
+    marks : integer;
     { Private declarations }
   public
     { Public declarations }
@@ -45,6 +46,7 @@ uses Home_U, Login_U, New_U, Client_U;
 procedure TQuiz_Form.tmrClockTimer(Sender: TObject);
 begin
   PBClock.Position := PBClock.Position + 5;
+  marks := marks - 1;
 end;
 
 
@@ -61,19 +63,46 @@ begin
 end;
 
 procedure TQuiz_Form.Go(path: string);
+var
+arrQuestion : array[1..20] of string;
+arrAnswer : array[1..20] of string;
+arrRan1 : array[1..20] of string;
+arrRan2 : array[1..20] of string;
+arrRan3 : array[1..20] of string;
+
+TFile : textfile;
+icount : integer;
+
 begin
-//
+// read file en save na arrs//
+Assignfile(Tfile, path);
+
+try
+reset(tfile);
+except
+  MessageDlg('Quiz ' + path + ' does not exist. Please contact your administrator.',mtWarning,[mbOK],0);
+  exit;
+
+end;
+//////////////////////////////////////
+                  //repeat 5 times//
+  //random question and answer sequence//
+  marks := 20;
+  tmrClock.Enabled := true;
+  PBclock.Position := 0;
+
+  ////////////////////////////////////////
+
 end;
 
-procedure TQuiz_Form.FormShow(Sender: TObject);
+procedure TQuiz_Form.FormActivate(Sender: TObject);
 begin
 Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
 Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
-/// maak procedure vraag///
-tmrClock.Enabled := true;
-PBclock.Position := 0;
 
 Go('quizzes\'+Client_Form.quiz+'.txt');
+Quiz_Form.Hide;
+Client_Form.Show;
 end;
 
 end.

@@ -21,7 +21,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnPlayClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +53,7 @@ buttonselected := MessageDlg('You have selected '+ LBquiz.Items[LBquiz.ItemIndex
 if buttonselected = mrOK then
 begin
   quiz := LBquiz.Items[LBquiz.ItemIndex];
+  Quiz_Form.Enabled := true;
   Quiz_Form.Show;
   Client_Form.hide;
 end;
@@ -66,11 +67,10 @@ begin
   Home_Form.Show;
 end;
 
-procedure TClient_Form.FormShow(Sender: TObject);
+procedure TClient_Form.FormCreate(Sender: TObject);
 begin
 Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
 Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
-
 end;
 
 end.

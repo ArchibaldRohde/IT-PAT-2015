@@ -62,6 +62,7 @@ procedure THome_Form.FormCreate(Sender: TObject);
 begin
   Home_Form.Left := round((screen.WorkAreaWidth -600)/2);
   Home_Form.Top := round((screen.WorkAreaHeight -350)/2);
+   Quiz_Form.Enabled := false;
 end;
 
 end.

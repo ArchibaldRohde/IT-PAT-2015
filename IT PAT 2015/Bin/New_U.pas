@@ -66,7 +66,7 @@ begin
   end;
   if NOT Dmod.TableUser.Eof then
   begin
-  MessageDlg('Username exists!',mtError,[mbCancel],0);
+  MessageDlg('The user exists POEPHOL!',mtError,[mbCancel],0);
   exit;
   end;
 

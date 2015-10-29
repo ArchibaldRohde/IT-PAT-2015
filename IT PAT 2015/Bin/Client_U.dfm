@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 863
-  Top = 600
+  Left = 1931
+  Top = 588
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350
@@ -13,7 +13,7 @@ object Client_Form: TClient_Form
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
-  OnShow = FormShow
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
