@@ -70,9 +70,10 @@ arrAnswer : array[1..20] of string;
 arrRan1 : array[1..20] of string;
 arrRan2 : array[1..20] of string;
 arrRan3 : array[1..20] of string;
+arrNumbers : array[1..5] of integer;
 
 TFile : textfile;
-counter : integer;
+counter, k : integer;
 slyn : string;
 
 begin
@@ -91,20 +92,45 @@ while NOT eof(tfile) do
 begin
  readln(Tfile,slyn);
  arrQuestion[counter] := copy(slyn,0,(POS('#',Slyn)-1));
- delete(slyn,0,POS('#',Slyn));
+ delete(slyn,1,POS('#',Slyn));
  arrAnswer[counter] := copy(slyn,0,(POS('#',Slyn)-1));
- delete(slyn,0,POS('#',Slyn));
+ delete(slyn,1,POS('#',Slyn));
  arrRan1[counter] := copy(slyn,0,(POS('#',Slyn)-1));
- delete(slyn,0,POS('#',Slyn));
+ delete(slyn,1,POS('#',Slyn));
  arrRan2[counter] := copy(slyn,0,(POS('#',Slyn)-1));
- delete(slyn,0,POS('#',Slyn));
+ delete(slyn,1,POS('#',Slyn));
   arrRan3[counter] := copy(slyn,0,length(slyn));
- showMessage('vraag: ' + arrQuestion[counter] + '  Antwoord: ' + arrAnswer[counter] + '  Ran3: ' + arrRan3[counter]);
+ //showMessage('vraag: ' + arrQuestion[counter] + '  Antwoord: ' + arrAnswer[counter] + '  Ran3: ' + arrRan3[counter]);
  inc(counter);
 
 end;
 
 //////////////////////////////////////
+randomize;
+arrNumbers[1] := random(20) + 1;
+
+arrNumbers[2] :=  random(20) + 1;
+while arrNumbers[2] = arrNumbers[1] do
+  arrNumbers[2] :=  random(20) + 1;
+
+arrNumbers[3] :=  random(20) + 1;
+while (arrNumbers[3] = arrNumbers[1]) OR (arrNumbers[3] = arrNumbers[2]) do
+  arrNumbers[3] :=  random(20) + 1;
+
+arrNumbers[4] :=  random(20) + 1;
+while (arrNumbers[4] = arrNumbers[1]) OR (arrNumbers[4] = arrNumbers[2]) OR (arrNumbers[4] = arrNumbers[3]) do
+  arrNumbers[4] :=  random(20) + 1;
+
+arrNumbers[5] :=  random(20) + 1;
+while (arrNumbers[5] = arrNumbers[1]) OR (arrNumbers[5] = arrNumbers[2]) OR (arrNumbers[5] = arrNumbers[3]) OR (arrNumbers[5] = arrNumbers[4]) do
+  arrNumbers[5] :=  random(20) + 1;
+//////////////////////////////////////
+for k := 1 to 5 do
+begin
+  
+end;
+
+
                   //repeat 5 times//
   //random question and answer sequence//
   marks := 20;
