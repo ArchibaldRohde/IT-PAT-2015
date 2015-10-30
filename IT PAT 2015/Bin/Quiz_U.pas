@@ -44,6 +44,7 @@ type
     arrRan1 : array[1..20] of string;
     arrRan2 : array[1..20] of string;
     arrRan3 : array[1..20] of string;
+    arrMix : array [1..4] of string;
     { Private declarations }
   public
     { Public declarations }
@@ -179,13 +180,37 @@ end;
 
 /////////////////////////NEXT///////////////
 procedure TQuiz_Form.NextQuestion;
+var
+Oth1, Oth2, Oth3, Oth : integer;
 begin
   total := total + marks;
+  ///////////////////////////
+       arrMix[1] := arrAnswer[arrnumbers[quizcount]];
+       arrMix[2] := arrran1[arrnumbers[quizcount]];
+       arrMix[3] := arrran2[arrnumbers[quizcount]];
+       arrMix[4] := arrran3[arrnumbers[quizcount]];
+
+       randomize;
+
+Oth1 := random(4)+1;
+Oth2 := random(4)+1;
+Oth3 := random(4)+1;
+
+Oth := random(4)+1;
+while Oth1 = Oth do
+  Oth1 :=  random(4)+1;
+while (Oth2 = Oth) OR (Oth2 = Oth1) do
+  Oth2 :=  random(4)+1;
+while (Oth3 = Oth) OR (Oth3 = Oth1) OR (Oth3 = Oth2) do
+  Oth3 :=  random(4)+1;
+
+  /////////////////////////////
+
   lblQuestion.caption := arrQuestion[arrnumbers[quizcount]];
-  btnA.Caption := arrAnswer[arrnumbers[quizcount]];
-  btnB.Caption := arrran1[arrnumbers[quizcount]];
-  btnC.Caption := arrran2[arrnumbers[quizcount]];
-  btnD.Caption := arrran3[arrnumbers[quizcount]];
+  btnA.Caption := arrMix[Oth];
+  btnB.Caption := arrMix[Oth1];
+  btnC.Caption := arrMix[Oth2];
+  btnD.Caption := arrMix[Oth3];
 
   PBclock.Position := 0;
   marks := 20;
@@ -205,25 +230,56 @@ end;
 
 procedure TQuiz_Form.btnAClick(Sender: TObject);
 begin
+if btnA.caption = arrMix[1] then
+begin
+  NextQuestion
+end
+else
+begin
+  marks := 0;
   NextQuestion;
+end;
+
+
 end;
 
 procedure TQuiz_Form.btnBClick(Sender: TObject);
 begin
+if btnB.caption = arrMix[1] then
+begin
+  NextQuestion
+end
+else
+begin
   marks := 0;
-    NextQuestion;
+  NextQuestion;
+end;
 end;
 
 procedure TQuiz_Form.btnCClick(Sender: TObject);
 begin
- marks := 0;
-    NextQuestion;
+if btnC.caption = arrMix[1] then
+begin
+  NextQuestion
+end
+else
+begin
+  marks := 0;
+  NextQuestion;
+end;
 end;
 
 procedure TQuiz_Form.btnDClick(Sender: TObject);
 begin
- marks := 0;
-    NextQuestion;
+if btnD.caption = arrMix[1] then
+begin
+  NextQuestion
+end
+else
+begin
+  marks := 0;
+  NextQuestion;
+end;
 end;
 
 end.
