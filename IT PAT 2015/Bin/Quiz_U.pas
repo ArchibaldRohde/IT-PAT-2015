@@ -193,8 +193,8 @@ begin
 
  if quizcount > 5 then
  begin
-   showmessage('done ' + inttostr(total));
    tmrClock.Enabled := false;
+   showmessage('done ' + inttostr(total));
    Client_form.show;
    Quiz_Form.hide;
  end;
