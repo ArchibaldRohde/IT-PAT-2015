@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 1971
-  Top = 456
+  Left = 2007
+  Top = 532
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350
@@ -88,7 +88,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ItemHeight = 19
     Items.Strings = (
-      'Afrikaans Gr 10')
+      'Please refresh List')
     ParentFont = False
     TabOrder = 0
   end
