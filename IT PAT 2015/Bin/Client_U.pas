@@ -18,10 +18,12 @@ type
     lblhand1: TLabel;
     btnMy: TColorButton;
     btnClose: TBitBtn;
+    btnRefresh: TColorButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnPlayClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,6 +73,26 @@ procedure TClient_Form.FormCreate(Sender: TObject);
 begin
 Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
 Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
+end;
+
+procedure TClient_Form.btnRefreshClick(Sender: TObject);
+var
+tfile : Textfile;
+slyn : string;
+begin
+LBquiz.Clear;
+Assignfile(Tfile, 'QuizList.txt');
+  try
+    reset(Tfile);
+  except
+    MessageDlg('QuizList.txt does not exist... Something is terribly wrong! Call your technician!',mtError,[mbCancel],0);
+  end;
+    while NOT eof(tfile) do
+    begin
+      readln(Tfile, slyn);
+      LBquiz.Items.Add(slyn);
+    end;
+
 end;
 
 end.

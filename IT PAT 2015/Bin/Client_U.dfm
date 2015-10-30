@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 2028
-  Top = 380
+  Left = 1971
+  Top = 456
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350
@@ -88,22 +88,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ItemHeight = 19
     Items.Strings = (
-      'Afrikaans Gr 10'
-      '2'
-      'Johan'
-      '4'
-      '5'
-      '6'
-      '7'
-      '8'
-      '9'
-      '10'
-      '11'
-      '12'
-      '13'
-      '14'
-      '15'
-      '16')
+      'Afrikaans Gr 10')
     ParentFont = False
     TabOrder = 0
   end
@@ -165,5 +150,16 @@ object Client_Form: TClient_Form
     TabOrder = 4
     OnClick = btnCloseClick
     Kind = bkAbort
+  end
+  object btnRefresh: TColorButton
+    Left = 296
+    Top = 320
+    Width = 75
+    Height = 25
+    Caption = 'Refresh List'
+    TabOrder = 5
+    OnClick = btnRefreshClick
+    BackColor = clOlive
+    HoverColor = clRed
   end
 end
