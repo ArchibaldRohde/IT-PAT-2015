@@ -1,9 +1,9 @@
 object Home_Form: THome_Form
   Left = 2087
-  Top = 428
+  Top = 520
   BorderStyle = bsNone
   Caption = 'Home_Form'
-  ClientHeight = 350
+  ClientHeight = 258
   ClientWidth = 600
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET

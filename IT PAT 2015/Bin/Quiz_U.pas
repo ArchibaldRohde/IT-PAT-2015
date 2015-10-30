@@ -28,9 +28,12 @@ type
     procedure Go(path : string);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure CheckAnswer(button: integer);
+    procedure NextQuestion(number : integer);
 
   private
     marks : integer;
+    arrNumbers : array[1..5] of integer;
     { Private declarations }
   public
     { Public declarations }
@@ -38,6 +41,12 @@ type
 
 var
   Quiz_Form: TQuiz_Form;
+
+const
+  button1 = 1;
+  button2 = 2;
+  button3 = 3;
+  button4 = 4;
 
 implementation
 
@@ -70,7 +79,7 @@ arrAnswer : array[1..20] of string;
 arrRan1 : array[1..20] of string;
 arrRan2 : array[1..20] of string;
 arrRan3 : array[1..20] of string;
-arrNumbers : array[1..5] of integer;
+
 
 TFile : textfile;
 counter, k : integer;
@@ -127,7 +136,13 @@ while (arrNumbers[5] = arrNumbers[1]) OR (arrNumbers[5] = arrNumbers[2]) OR (arr
 //////////////////////////////////////
 for k := 1 to 5 do
 begin
-  
+  lblQuestion.caption := arrQuestion[arrnumbers[k]];
+  btnA.Caption := arrAnswer[arrnumbers[k]];
+  btnB.Caption := arrran1[arrnumbers[k]];
+  btnC.Caption := arrran2[arrnumbers[k]];
+  btnD.Caption := arrran3[arrnumbers[k]];
+
+
 end;
 
 
@@ -154,4 +169,29 @@ Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
 tmrClock.Enabled := false;
 end;
 
+procedure TQuiz_Form.CheckAnswer(button: integer);
+begin
+
+case button of
+ button1 : ;
+ button2 : ;
+end;
+
+//
+end;
+
+procedure TQuiz_Form.NextQuestion(number: integer);
+begin
+//
+end;
+
 end.
+
+
+{........................................
+skryf aparte prosedure vir next question
+skryf aparte prosedure GO vir initial
+skryf check button wat run op buttonclick
+..........................................
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+jaaaaas!!!! jy kan dit doen}
