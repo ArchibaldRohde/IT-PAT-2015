@@ -1,6 +1,6 @@
 object Quiz_Form: TQuiz_Form
-  Left = 921
-  Top = 471
+  Left = 1931
+  Top = 218
   BorderStyle = bsNone
   Caption = 'Quiz_Form'
   ClientHeight = 350
@@ -13,7 +13,6 @@ object Quiz_Form: TQuiz_Form
   Font.Style = []
   OldCreateOrder = False
   OnActivate = FormActivate
-  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -121,6 +120,7 @@ object Quiz_Form: TQuiz_Form
     Width = 553
     Height = 33
     TabOrder = 1
+    OnClick = btnAClick
     BackColor = clOlive
     HoverColor = clTeal
   end
@@ -130,6 +130,7 @@ object Quiz_Form: TQuiz_Form
     Width = 553
     Height = 33
     TabOrder = 2
+    OnClick = btnBClick
     BackColor = clOlive
     HoverColor = clTeal
   end
@@ -139,6 +140,7 @@ object Quiz_Form: TQuiz_Form
     Width = 553
     Height = 33
     TabOrder = 3
+    OnClick = btnCClick
     BackColor = clOlive
     HoverColor = clTeal
   end
@@ -148,6 +150,7 @@ object Quiz_Form: TQuiz_Form
     Width = 553
     Height = 33
     TabOrder = 4
+    OnClick = btnDClick
     BackColor = clOlive
     HoverColor = clTeal
   end

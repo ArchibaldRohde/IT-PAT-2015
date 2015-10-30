@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 1019
-  Top = 519
+  Left = 2028
+  Top = 380
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350

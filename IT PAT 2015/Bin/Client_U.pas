@@ -55,6 +55,7 @@ begin
   quiz := LBquiz.Items[LBquiz.ItemIndex];
   Quiz_Form.Show;
   Client_Form.hide;
+  Quiz_Form.Go('quizzes\'+quiz+'.txt');
 end;
 
 

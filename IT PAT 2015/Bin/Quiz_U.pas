@@ -23,17 +23,27 @@ type
     btnD: TColorButton;
     btnClose: TBitBtn;
     procedure tmrClockTimer(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCloseClick(Sender: TObject);
     procedure Go(path : string);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure CheckAnswer(button: integer);
-    procedure NextQuestion(number : integer);
+    procedure NextQuestion;
+    procedure btnAClick(Sender: TObject);
+    procedure btnBClick(Sender: TObject);
+    procedure btnCClick(Sender: TObject);
+    procedure btnDClick(Sender: TObject);
 
   private
     marks : integer;
+    total : integer;
+    quizcount : integer;
     arrNumbers : array[1..5] of integer;
+    arrQuestion : array[1..20] of string;
+    arrAnswer : array[1..20] of string;
+    arrRan1 : array[1..20] of string;
+    arrRan2 : array[1..20] of string;
+    arrRan3 : array[1..20] of string;
     { Private declarations }
   public
     { Public declarations }
@@ -52,41 +62,39 @@ implementation
 
 {$R *.dfm}
 uses Home_U, Login_U, New_U, Client_U;
-
+/////////////////////////////////////TIMER/////////////////////////////////////////
 procedure TQuiz_Form.tmrClockTimer(Sender: TObject);
 begin
   PBClock.Position := PBClock.Position + 5;
   marks := marks - 1;
+  if PBclock.Position = 100 then
+  begin
+    NextQuestion;
+  end;
+
 end;
+////////////////////////////////////TIMER//////////////////////////////////////////
 
-
-
-procedure TQuiz_Form.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-Home_Form.Show;
-end;
-
+////////////////////////////////////Close/////////////////////////////////////////
 procedure TQuiz_Form.btnCloseClick(Sender: TObject);
 begin
   Quiz_Form.Hide;
   Client_Form.Show;
 end;
+////////////////////////////////////Close/////////////////////////////////////////
 
+////////////////////////////////////GO////////////////////////////////////////////
 procedure TQuiz_Form.Go(path: string);
 var
-arrQuestion : array[1..20] of string;
-arrAnswer : array[1..20] of string;
-arrRan1 : array[1..20] of string;
-arrRan2 : array[1..20] of string;
-arrRan3 : array[1..20] of string;
-
 
 TFile : textfile;
 counter, k : integer;
 slyn : string;
 
 begin
+total := 0;
 // read file en save na arrs//
+/////////////////////////////
 Assignfile(Tfile, path);
 
 try
@@ -113,8 +121,8 @@ begin
  inc(counter);
 
 end;
-
 //////////////////////////////////////
+/////////////randoms/////////////////////////
 randomize;
 arrNumbers[1] := random(20) + 1;
 
@@ -133,32 +141,18 @@ while (arrNumbers[4] = arrNumbers[1]) OR (arrNumbers[4] = arrNumbers[2]) OR (arr
 arrNumbers[5] :=  random(20) + 1;
 while (arrNumbers[5] = arrNumbers[1]) OR (arrNumbers[5] = arrNumbers[2]) OR (arrNumbers[5] = arrNumbers[3]) OR (arrNumbers[5] = arrNumbers[4]) do
   arrNumbers[5] :=  random(20) + 1;
-//////////////////////////////////////
-for k := 1 to 5 do
-begin
-  lblQuestion.caption := arrQuestion[arrnumbers[k]];
-  btnA.Caption := arrAnswer[arrnumbers[k]];
-  btnB.Caption := arrran1[arrnumbers[k]];
-  btnC.Caption := arrran2[arrnumbers[k]];
-  btnD.Caption := arrran3[arrnumbers[k]];
-
-
-end;
-
-
-                  //repeat 5 times//
-  //random question and answer sequence//
-  marks := 20;
+//////////////////randoms////////////////////////
+////////////////////////////////////////////////
   tmrClock.Enabled := true;
-  PBclock.Position := 0;
-
-  ////////////////////////////////////////
-
+  quizcount := 1;
+  nextquestion;
 end;
+////////////////////////////////////GO////////////////////////////////////////////
+
 
 procedure TQuiz_Form.FormActivate(Sender: TObject);
 begin
-Go('quizzes\'+Client_Form.quiz+'.txt');
+{Go('quizzes\'+Client_Form.quiz+'.txt');}
 
 end;
 
@@ -172,17 +166,64 @@ end;
 procedure TQuiz_Form.CheckAnswer(button: integer);
 begin
 
-case button of
- button1 : ;
- button2 : ;
-end;
-
+{case button of
+ button1 : 1;
+ button2 : 2;
+ button3 : 3;
+ button4 : 4;
+end; }
+nextquestion;
 //
 end;
 
-procedure TQuiz_Form.NextQuestion(number: integer);
+
+/////////////////////////NEXT///////////////
+procedure TQuiz_Form.NextQuestion;
 begin
-//
+  total := total + marks;
+  lblQuestion.caption := arrQuestion[arrnumbers[quizcount]];
+  btnA.Caption := arrAnswer[arrnumbers[quizcount]];
+  btnB.Caption := arrran1[arrnumbers[quizcount]];
+  btnC.Caption := arrran2[arrnumbers[quizcount]];
+  btnD.Caption := arrran3[arrnumbers[quizcount]];
+
+  PBclock.Position := 0;
+  marks := 20;
+  inc(quizcount);
+
+ if quizcount > 5 then
+ begin
+   showmessage('done ' + inttostr(total));
+   tmrClock.Enabled := false;
+   Client_form.show;
+   Quiz_Form.hide;
+ end;
+
+
+end;
+/////////////////////////NEXT///////////////
+
+procedure TQuiz_Form.btnAClick(Sender: TObject);
+begin
+  NextQuestion;
+end;
+
+procedure TQuiz_Form.btnBClick(Sender: TObject);
+begin
+  marks := 0;
+    NextQuestion;
+end;
+
+procedure TQuiz_Form.btnCClick(Sender: TObject);
+begin
+ marks := 0;
+    NextQuestion;
+end;
+
+procedure TQuiz_Form.btnDClick(Sender: TObject);
+begin
+ marks := 0;
+    NextQuestion;
 end;
 
 end.
