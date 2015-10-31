@@ -48,7 +48,7 @@ procedure TLogin_Form.btnLoginClick(Sender: TObject);
 begin  //pro
 sName := edtName.text;
 sPassword := edtPassword.text;
-
+edtPassword.Text := '';
 if Home_Form.bAdmin = false then
     begin
       Dmod.TableUser.First;
@@ -63,14 +63,19 @@ if Home_Form.bAdmin = false then
       if Dmod.TableUser.Eof then
       begin  //if
       MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+      edtName.Color := clred;
       exit;
       end;   //if
 
       if NOT (Dmod.TableUser['Password'] = sPassword) then
       begin  //if pass
       MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
+      edtPassword.Color := clred;
+      edtName.Color := clteal;
       exit;  //if pass
       end;
+      edtName.Color := clteal;
+      edtPassword.Color := clteal;
       Client_Form.Show;
       Login_Form.Hide;
 end
@@ -89,13 +94,18 @@ begin
       begin  //if
       MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
       exit;
+      edtName.Color := clred;
       end;   //if
 
       if NOT (Dmod.TableAdmin['Password'] = sPassword) then
       begin  //if pass
       MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
       exit;
+      edtPassword.Color := clred;
+      edtName.Color := clteal;
       end; //if pass
+      edtName.Color := clteal;
+      edtPassword.Color := clteal;
 Admin_Form.Show;
 Login_Form.Hide;
 end;

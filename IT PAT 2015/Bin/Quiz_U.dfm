@@ -72,7 +72,7 @@ object Quiz_Form: TQuiz_Form
     Left = 40
     Top = 64
     Width = 333
-    Height = 21
+    Height = 41
     Caption = '<Insert random question here>'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -80,6 +80,7 @@ object Quiz_Form: TQuiz_Form
     Font.Name = 'Copperplate Gothic Bold'
     Font.Style = []
     ParentFont = False
+    WordWrap = True
   end
   object lblPOPQuiz: TLabel
     Left = 256

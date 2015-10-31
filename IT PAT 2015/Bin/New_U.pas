@@ -66,7 +66,7 @@ begin
   end;
   if NOT Dmod.TableUser.Eof then
   begin
-  MessageDlg('The user exists POEPHOL!',mtError,[mbCancel],0);
+  MessageDlg('This username already exists, try something more creative!',mtError,[mbCancel],0);
   exit;
   end;
 
@@ -77,7 +77,7 @@ begin
   Dmod.TableUser['Password'] := sNewPassword;
   Dmod.TableUser['Hint'] := sNewHint;
   Dmod.TableUser.Post;
-  MessageDlg('Well done ' + sNewName + ' jy is `n poephol!!!!',mtWarning,[mbOK],0);
+  MessageDlg('Well done ' + sNewName + ', you are now a qualified user!',mtWarning,[mbOK],0);
 
   New_Form.Hide;
   Home_Form.Show;

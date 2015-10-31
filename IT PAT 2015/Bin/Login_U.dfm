@@ -1,6 +1,6 @@
 object Login_Form: TLogin_Form
-  Left = 2221
-  Top = 473
+  Left = 2330
+  Top = 463
   BorderStyle = bsNone
   Caption = 'Login_Form'
   ClientHeight = 350
@@ -3846,8 +3846,8 @@ object Login_Form: TLogin_Form
     Width = 145
     Height = 21
     Color = clTeal
+    PasswordChar = '*'
     TabOrder = 1
-    Text = '<insert password here>'
   end
   object btnLogin: TColorButton
     Left = 256

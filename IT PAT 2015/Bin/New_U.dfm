@@ -1,6 +1,6 @@
 object New_Form: TNew_Form
-  Left = 1971
-  Top = 275
+  Left = 1109
+  Top = 536
   BorderStyle = bsNone
   Caption = 'New_Form'
   ClientHeight = 350
@@ -3853,6 +3853,7 @@ object New_Form: TNew_Form
     Width = 145
     Height = 21
     Color = clTeal
+    PasswordChar = '*'
     TabOrder = 1
   end
   object btnCreateUser: TColorButton
