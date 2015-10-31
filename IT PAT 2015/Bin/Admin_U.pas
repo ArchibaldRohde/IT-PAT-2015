@@ -105,12 +105,12 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
   for i := 1 to k do
   begin
     slyn := (arrQuestion[i] + '#' + arrAnswer[i] + '#' + arrRan[1] + '#' + arrRan2[1]);
-    showMessage('The Following Data was uploaded: ' + slyn);
     WriteLn(tfile, slyn);
   end;
   closefile(tfile);
-  Assignfile(tfile,'QuizList.txt');
 
+ /////////////QUIZNAME////////////////
+  Assignfile(tfile,'QuizList.txt');
    try
     reset(Tfile);
   except
@@ -119,7 +119,8 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
   end;
 
   WriteLn(tfile, QuizName);
-
+  closefile(tfile);
+  ///////////////////////////////////
 end;
 
 end.

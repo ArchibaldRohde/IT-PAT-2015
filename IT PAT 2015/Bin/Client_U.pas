@@ -92,7 +92,7 @@ Assignfile(Tfile, 'QuizList.txt');
       readln(Tfile, slyn);
       LBquiz.Items.Add(slyn);
     end;
-
+closefile(tfile);
 end;
 
 end.

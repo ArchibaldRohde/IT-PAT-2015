@@ -122,6 +122,7 @@ begin
  inc(counter);
 
 end;
+closefile(tfile);
 //////////////////////////////////////
 /////////////randoms/////////////////////////
 randomize;
@@ -284,11 +285,3 @@ end;
 
 end.
 
-
-{........................................
-skryf aparte prosedure vir next question
-skryf aparte prosedure GO vir initial
-skryf check button wat run op buttonclick
-..........................................
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-jaaaaas!!!! jy kan dit doen}

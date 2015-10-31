@@ -116,21 +116,43 @@ procedure TLogin_Form.btnForgotClick(Sender: TObject);
 begin
   sName := edtName.text;
 
-Dmod.TableUser.First;
-while NOT Dmod.TableUser.Eof  do
-begin //while
+if Home_Form.bAdmin = false; then
+begin
+  Dmod.TableUser.First;
+  while NOT Dmod.TableUser.Eof  do
+  begin //while
 
-   if Dmod.TableUser['Username'] = sName then
-    break;
+     if Dmod.TableUser['Username'] = sName then
+      break;
 
-    Dmod.TableUser.Next;
-end; //while
-  if Dmod.TableUser.Eof then
-  begin  //if
-  MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
-  exit;
-  end;   //if
- MessageDlg('Hint: ' + Dmod.TableUser['Hint'],mtInformation,[mbOK],0);
+     Dmod.TableUser.Next;
+  end; //while
+   if Dmod.TableUser.Eof then
+   begin  //if
+    MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+    exit;
+   end;   //if
+   MessageDlg('Hint: ' + Dmod.TableUser['Hint'],mtInformation,[mbOK],0);
+end
+else
+begin
+  Dmod.TableAdmin.First;
+  while NOT Dmod.TableAdmin.Eof  do
+  begin //while
+
+     if Dmod.TableAdmin['Username'] = sName then
+      break;
+
+     Dmod.TableAdmin.Next;
+  end; //while
+   if Dmod.TableAdmin.Eof then
+   begin  //if
+    MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+    exit;
+   end;   //if
+   MessageDlg('Hint: ' + Dmod.TableAdmin['Hint'],mtInformation,[mbOK],0);
+end;
+
 end;
 
 end.
