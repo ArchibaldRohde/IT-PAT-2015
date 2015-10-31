@@ -168,14 +168,48 @@ end;
 procedure TQuiz_Form.CheckAnswer(button: integer);
 begin
 
-{case button of
- button1 : 1;
- button2 : 2;
- button3 : 3;
- button4 : 4;
-end; }
-nextquestion;
-//
+case button of
+ button1 : if btnA.caption = arrMix[1] then
+            begin
+            NextQuestion;
+            end
+            else
+            begin
+            marks := 0;
+            NextQuestion;
+            end;
+
+ button2 : if btnB.caption = arrMix[1] then
+            begin
+              NextQuestion
+            end
+            else
+            begin
+              marks := 0;
+              NextQuestion;
+            end;
+            
+ button3 : if btnC.caption = arrMix[1] then
+            begin
+              NextQuestion
+            end
+            else
+            begin
+              marks := 0;
+              NextQuestion;
+            end;
+
+ button4 : if btnD.caption = arrMix[1] then
+            begin
+              NextQuestion
+            end
+            else
+            begin
+              marks := 0;
+              NextQuestion;
+            end;
+end;
+
 end;
 
 
@@ -231,56 +265,22 @@ end;
 
 procedure TQuiz_Form.btnAClick(Sender: TObject);
 begin
-if btnA.caption = arrMix[1] then
-begin
-  NextQuestion
-end
-else
-begin
-  marks := 0;
-  NextQuestion;
-end;
-
-
+CheckAnswer(button1);
 end;
 
 procedure TQuiz_Form.btnBClick(Sender: TObject);
 begin
-if btnB.caption = arrMix[1] then
-begin
-  NextQuestion
-end
-else
-begin
-  marks := 0;
-  NextQuestion;
-end;
+CheckAnswer(button2);
 end;
 
 procedure TQuiz_Form.btnCClick(Sender: TObject);
 begin
-if btnC.caption = arrMix[1] then
-begin
-  NextQuestion
-end
-else
-begin
-  marks := 0;
-  NextQuestion;
-end;
+CheckAnswer(button3);
 end;
 
 procedure TQuiz_Form.btnDClick(Sender: TObject);
 begin
-if btnD.caption = arrMix[1] then
-begin
-  NextQuestion
-end
-else
-begin
-  marks := 0;
-  NextQuestion;
-end;
+CheckAnswer(button4);
 end;
 
 end.

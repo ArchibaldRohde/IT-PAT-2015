@@ -1,6 +1,6 @@
 object Admin_Form: TAdmin_Form
-  Left = 1312
-  Top = 361
+  Left = 818
+  Top = 281
   BorderStyle = bsNone
   Caption = 'Admin_Form'
   ClientHeight = 350
@@ -27,6 +27,20 @@ object Admin_Form: TAdmin_Form
     Font.Name = 'AR DARLING'
     Font.Style = []
     ParentFont = False
+  end
+  object lblInfo: TLabel
+    Left = 336
+    Top = 208
+    Width = 255
+    Height = 89
+    AutoSize = False
+    Caption = 
+      'Greetings Administrator.                                    Plea' +
+      'se remember when creating a new Quiz to not give it the name of ' +
+      'an already existing Quiz. This will create serious problems sinc' +
+      'e this program is still in BETA!  Use Admin rights with the utmo' +
+      'st care! Remember, the force will be with you. Always!'
+    WordWrap = True
   end
   object btnClose: TBitBtn
     Left = 568

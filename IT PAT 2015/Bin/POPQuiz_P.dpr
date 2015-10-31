@@ -8,12 +8,14 @@ uses
   New_U in 'New_U.pas' {New_Form},
   Client_U in 'Client_U.pas' {Client_Form},
   Datamodule_U in 'Datamodule_U.pas' {Dmod: TDataModule},
-  Admin_U in 'Admin_U.pas' {Admin_Form};
+  Admin_U in 'Admin_U.pas' {Admin_Form},
+  Video_U in 'Video_U.pas' {Video_Form};
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  Application.CreateForm(TVideo_Form, Video_Form); 
   Application.CreateForm(THome_Form, Home_Form);
   Application.CreateForm(TQuiz_Form, Quiz_Form);
   Application.CreateForm(TLogin_Form, Login_Form);

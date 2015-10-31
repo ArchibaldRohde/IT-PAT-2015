@@ -1,6 +1,6 @@
 object Quiz_Form: TQuiz_Form
-  Left = 2070
-  Top = 565
+  Left = 2040
+  Top = 577
   BorderStyle = bsNone
   Caption = 'Quiz_Form'
   ClientHeight = 350

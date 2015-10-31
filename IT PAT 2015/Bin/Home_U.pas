@@ -36,6 +36,7 @@ uses Login_U, New_U, Client_U;
 
 procedure THome_Form.btnLoginClick(Sender: TObject);
 begin
+Client_Form.btnRefresh.Click;
 bAdmin := false;
 Login_Form.Show;
 Home_Form.Hide;

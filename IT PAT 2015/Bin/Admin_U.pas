@@ -15,6 +15,7 @@ type
     LBquiz: TListBox;
     lblPOPQuiz: TLabel;
     btnRefresh: TColorButton;
+    lblInfo: TLabel;
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
@@ -42,6 +43,7 @@ end;
 
 procedure TAdmin_Form.FormCreate(Sender: TObject);
 begin
+  Admin_Form.btnRefresh.Click;
   Admin_Form.Left := round((screen.WorkAreaWidth -600)/2);
   Admin_Form.Top := round((screen.WorkAreaHeight -350)/2);
 end;
