@@ -71,11 +71,16 @@ var
 Tfile : textfile;
 slyn : string;
 QuizName : string;
-buttonSel : string;
+buttonSel : integer;
+k, i : integer;
 
 arrQuestion : array [1..20] of string;
+arrAnswer : array [1..20]of string;
+arrRan : array [1..20]of string;
+arrRan1 : array [1..20]of string;
+arrRan2 : array [1..20]of string;
 begin
-
+k := 0;
 QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
 
   Assignfile(Tfile,('quizzes\' + QuizName + '.txt.'));
@@ -84,13 +89,36 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
   buttonSel := mrYes;
   while buttonSel = mrYes do
   begin
-    buttonSel := MessageDlg('Would you like to add a question!',mtConfirmation,mbYesNoCancel,0);
+    buttonSel := MessageDlg('Would you like to add a question? *keep in mind that 20 Questions should be added until further notice! ' + inttostr(k) + ' Questions have been added.',mtConfirmation,mbYesNoCancel,0);
     if buttonSel = mrYes then
     begin
+      arrQuestion[k+1] :=  Inputbox('Question:','Question:', 'Question:');
+      arrAnswer[k+1] :=  Inputbox('Answer:','Answer:', 'Answer:');
+      arrRan[k+1] :=  Inputbox('Wrong Answer 1:','Wrong Answer 1:', 'Wrong Answer 1:');
+      arrRan1[k+1] :=  Inputbox('Wrong Answer 2:','Wrong Answer 2:', 'Wrong Answer 2:');
+      arrRan2[k+1] :=  Inputbox('Wrong Answer 3:','Wrong Answer 3:', 'Wrong Answer 3:');
 
+      inc(k);
     end;
 
   end;
+  for i := 1 to k do
+  begin
+    slyn := (arrQuestion[i] + '#' + arrAnswer[i] + '#' + arrRan[1] + '#' + arrRan2[1]);
+    showMessage('The Following Data was uploaded: ' + slyn);
+    WriteLn(tfile, slyn);
+  end;
+  closefile(tfile);
+  Assignfile(tfile,'QuizList.txt');
+
+   try
+    reset(Tfile);
+  except
+    MessageDlg('QuizList.txt does not exist... Something is terribly wrong! Call your technician!',mtError,[mbCancel],0);
+    exit;
+  end;
+
+  WriteLn(tfile, QuizName);
 
 end;
 

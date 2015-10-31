@@ -1,6 +1,6 @@
 object Home_Form: THome_Form
-  Left = 1252
-  Top = 764
+  Left = 1296
+  Top = 789
   BorderStyle = bsNone
   Caption = 'Home_Form'
   ClientHeight = 258
