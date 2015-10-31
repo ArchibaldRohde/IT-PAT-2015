@@ -1,9 +1,10 @@
 object Video_Form: TVideo_Form
-  Left = 501
-  Top = 322
-  Width = 1305
-  Height = 675
+  Left = 234
+  Top = 184
+  BorderStyle = bsNone
   Caption = 'Video_Form'
+  ClientHeight = 636
+  ClientWidth = 1289
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +17,7 @@ object Video_Form: TVideo_Form
   PixelsPerInch = 96
   TextHeight = 13
   object btnClose: TBitBtn
-    Left = 1256
+    Left = 0
     Top = 0
     Width = 33
     Height = 25
@@ -40,7 +41,13 @@ object Video_Form: TVideo_Form
     Height = 30
     AutoOpen = True
     Display = pnlScreen
-    FileName = 'C:\Users\Archibald\Desktop\Untitled1_Lossless.avi'
+    FileName = 'C:\Users\Archibald\Desktop\norse vid\Game2.avi'
+    Visible = False
     TabOrder = 2
+  end
+  object tmrVid: TTimer
+    Interval = 75000
+    OnTimer = tmrVidTimer
+    Top = 608
   end
 end

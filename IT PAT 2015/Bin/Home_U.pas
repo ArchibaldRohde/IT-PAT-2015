@@ -31,7 +31,7 @@ var
   Home_Form: THome_Form;
 
 implementation
-uses Login_U, New_U, Client_U;
+uses Login_U, New_U, Client_U, Video_U;
 {$R *.dfm}
 
 procedure THome_Form.btnLoginClick(Sender: TObject);
@@ -58,6 +58,7 @@ end;
 
 procedure THome_Form.btnCloseClick(Sender: TObject);
 begin
+  Video_Form.close;
   Home_Form.Close;
 end;
 
