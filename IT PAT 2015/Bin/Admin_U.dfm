@@ -1,6 +1,6 @@
 object Admin_Form: TAdmin_Form
-  Left = 2231
-  Top = 499
+  Left = 2263
+  Top = 213
   BorderStyle = bsNone
   Caption = 'Admin_Form'
   ClientHeight = 350
@@ -67,6 +67,7 @@ object Admin_Form: TAdmin_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnClick = btnAddClick
     BackColor = clOlive
     HoverColor = clTeal
   end
@@ -86,7 +87,7 @@ object Admin_Form: TAdmin_Form
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object ListBox1: TListBox
+  object LBquiz: TListBox
     Left = 56
     Top = 80
     Width = 273
@@ -99,23 +100,19 @@ object Admin_Form: TAdmin_Form
     Font.Style = []
     ItemHeight = 19
     Items.Strings = (
-      '1'
-      '2'
-      '3'
-      '4'
-      '5'
-      '6'
-      '7'
-      '8'
-      '9'
-      '10'
-      '11'
-      '12'
-      '13'
-      '14'
-      '15'
-      '16')
+      'Please refresh List')
     ParentFont = False
     TabOrder = 4
+  end
+  object btnRefresh: TColorButton
+    Left = 256
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'Refresh List'
+    TabOrder = 5
+    OnClick = btnRefreshClick
+    BackColor = clOlive
+    HoverColor = clRed
   end
 end
