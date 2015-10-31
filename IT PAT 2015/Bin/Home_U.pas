@@ -20,9 +20,10 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-    bAdmin : boolean;
+    
     { Private declarations }
   public
+   bAdmin : boolean
     { Public declarations }
   end;
 

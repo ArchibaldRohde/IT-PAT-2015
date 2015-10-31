@@ -35,7 +35,7 @@ var
   Login_Form: TLogin_Form;
 
 implementation
-uses Quiz_U, Home_U, New_U, Client_U;
+uses Quiz_U, Home_U, New_U, Client_U, Admin_U;
 
 {$R *.dfm}
 
@@ -49,30 +49,53 @@ begin  //pro
 sName := edtName.text;
 sPassword := edtPassword.text;
 
+if Home_Form.bAdmin = false then
+    begin
+      Dmod.TableUser.First;
+    while NOT Dmod.TableUser.Eof  do
+    begin //while
 
-Dmod.TableUser.First;
-while NOT Dmod.TableUser.Eof  do
-begin //while
+     if Dmod.TableUser['Username'] = sName then
+        break;
 
- if Dmod.TableUser['Username'] = sName then
-    break;
+        Dmod.TableUser.Next;
+    end; //while
+      if Dmod.TableUser.Eof then
+      begin  //if
+      MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+      exit;
+      end;   //if
 
-    Dmod.TableUser.Next;
-end; //while
-  if Dmod.TableUser.Eof then
-  begin  //if
-  MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
-  exit;
-  end;   //if
+      if NOT (Dmod.TableUser['Password'] = sPassword) then
+      begin  //if pass
+      MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
+      exit;  //if pass
+      end;
+end
+else
+begin
+      Dmod.TableAdmin.First;
+    while NOT Dmod.TableAdmin.Eof  do
+    begin //while
 
-  if NOT (Dmod.TableUser['Password'] = sPassword) then
-  begin  //if pass
-  MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
-  exit;
-  end;   //if pass
+     if Dmod.TableAdmin['Username'] = sName then
+        break;
 
+        Dmod.TableAdmin.Next;
+    end; //while
+      if Dmod.TableAdmin.Eof then
+      begin  //if
+      MessageDlg('Invallid Login, Please check username',mtError,[mbCancel],0);
+      exit;
+      end;   //if
 
-Client_Form.Show;
+      if NOT (Dmod.TableAdmin['Password'] = sPassword) then
+      begin  //if pass
+      MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
+      exit;
+      end; //if pass
+end;
+Admin_Form.Show;
 Login_Form.Hide;
 
 end; //pro
