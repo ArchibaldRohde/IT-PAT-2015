@@ -71,6 +71,8 @@ if Home_Form.bAdmin = false then
       MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
       exit;  //if pass
       end;
+      Client_Form.Show;
+      Login_Form.Hide;
 end
 else
 begin
@@ -94,9 +96,10 @@ begin
       MessageDlg('Invallid Login, Please check password',mtError,[mbCancel],0);
       exit;
       end; //if pass
-end;
 Admin_Form.Show;
 Login_Form.Hide;
+end;
+
 
 end; //pro
 
@@ -116,7 +119,7 @@ procedure TLogin_Form.btnForgotClick(Sender: TObject);
 begin
   sName := edtName.text;
 
-if Home_Form.bAdmin = false; then
+if Home_Form.bAdmin = false then
 begin
   Dmod.TableUser.First;
   while NOT Dmod.TableUser.Eof  do

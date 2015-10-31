@@ -23,7 +23,7 @@ type
     
     { Private declarations }
   public
-   bAdmin : boolean
+   bAdmin : boolean;
     { Public declarations }
   end;
 
@@ -36,9 +36,10 @@ uses Login_U, New_U, Client_U;
 
 procedure THome_Form.btnLoginClick(Sender: TObject);
 begin
+bAdmin := false;
 Login_Form.Show;
 Home_Form.Hide;
-bAdmin := false;
+
 end;
 
 procedure THome_Form.btnAdminClick(Sender: TObject);

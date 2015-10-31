@@ -112,9 +112,9 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
  /////////////QUIZNAME////////////////
   Assignfile(tfile,'QuizList.txt');
    try
-    reset(Tfile);
+    Append(Tfile);
   except
-    MessageDlg('QuizList.txt does not exist... Something is terribly wrong! Call your technician!',mtError,[mbCancel],0);
+    MessageDlg('"QuizList.txt" either exists or does not exist... Something is terribly wrong! Call your technician!',mtError,[mbCancel],0);
     exit;
   end;
 
