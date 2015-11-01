@@ -32,7 +32,7 @@ var
 
 implementation
 
-uses Home_U;
+uses Home_U, Datamodule_U;
 
 {$R *.dfm}
 
@@ -125,6 +125,19 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
   WriteLn(tfile, QuizName);
   closefile(tfile);
   ///////////////////////////////////
+  //////////HighScore//////////////
+
+  Dmod.TableHighScore.Last;
+  Dmod.TableHighScore.Edit;
+  Dmod.TableHighScore['Quiz'] := QuizName;
+  Dmod.TableHighScore['User1'] := 'NoName';
+  Dmod.TableHighScore['User1 score'] := 0;
+  Dmod.TableHighScore['User2'] := 'NoName';
+  Dmod.TableHighScore['User2 score'] := 0;
+  Dmod.TableHighScore['User3'] := 'NoName';
+  Dmod.TableHighScore['User3 score'] := 0;
+  Dmod.TableHighScore.Post;
+  /////////////////////////////////
   btnRefresh.Click;
 end;
 
@@ -138,6 +151,7 @@ begin
 button := MessageDlg(('Are you shure you want to delete ' + LBquiz.Items[LBquiz.ItemIndex] + '?'),mtWarning,mbYesNoCancel,0); //
     if button = mrYes then
     begin
+
    Assignfile(tfile,'QuizList.txt');
 
    try  ///
@@ -173,6 +187,20 @@ button := MessageDlg(('Are you shure you want to delete ' + LBquiz.Items[LBquiz.
    end;
    closefile(tfile);
    btnRefresh.Click;
+      ////////////
+
+    Dmod.TableHighScore.First;
+    while NOT Dmod.TableHighScore.Eof  do
+    begin
+     if Dmod.TableHighScore['Quiz'] = LBquiz.Items[LBquiz.ItemIndex] then
+        break;
+        Dmod.TableHighScore.Next;
+    end;
+
+    Dmod.TableHighScore.Delete;
+
+    ///////////
+
 end;
 end;
 

@@ -24,6 +24,7 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure btnHighClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,7 +37,7 @@ var
 
 implementation
 
-uses Home_U, Quiz_U;
+uses Home_U, Quiz_U, Datamodule_U;
 
 {$R *.dfm}
 
@@ -94,6 +95,24 @@ procedure TClient_Form.FormActivate(Sender: TObject);
 begin
 Client_Form.left := round((screen.WorkAreaWidth -600)/2);
 Client_Form.Top := round((screen.WorkAreaHeight -350)/2);
+end;
+
+procedure TClient_Form.btnHighClick(Sender: TObject);
+begin
+//
+ while NOT Dmod.TableHighScore.Eof  do
+    begin //while
+
+     if Dmod.TableHighScore['Quiz'] = LBquiz.Items[LBquiz.ItemIndex] then
+        break;
+        Dmod.TableHighScore.Next;
+    end;
+
+ShowMessage('The highscores for ' + DMod.TableHighScore['Quiz'] + ' are: ' + #10 + #10 +
+                         '1) ' + DMod.TableHighScore['User1'] + ' with: ' + floattostr(DMod.TableHighScore['User1 score']) + '/100' + #10 +
+                         '2) ' + DMod.TableHighScore['User2'] + ' with: ' + floattostr(DMod.TableHighScore['User2 score']) + '/100' + #10  +
+                         '3) ' + DMod.TableHighScore['User3'] + ' with: ' + floattostr(DMod.TableHighScore['User3 score']) + '/100');
+
 end;
 
 end.

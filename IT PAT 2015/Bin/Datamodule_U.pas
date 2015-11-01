@@ -10,6 +10,7 @@ type
     ADOuser: TADOConnection;
     TableUser: TADOTable;
     TableAdmin: TADOTable;
+    TableHighScore: TADOTable;
   private
     { Private declarations }
   public

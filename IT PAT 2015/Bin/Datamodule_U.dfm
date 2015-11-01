@@ -38,4 +38,12 @@ object Dmod: TDmod
     Left = 128
     Top = 8
   end
+  object TableHighScore: TADOTable
+    Active = True
+    Connection = ADOuser
+    CursorType = ctStatic
+    TableName = 'HighScore'
+    Left = 24
+    Top = 64
+  end
 end

@@ -33,10 +33,10 @@ type
     procedure btnBClick(Sender: TObject);
     procedure btnCClick(Sender: TObject);
     procedure btnDClick(Sender: TObject);
+    function HighScore(game : string; score : integer) : boolean;
 
   private
     marks : integer;
-    total : integer;
     quizcount : integer;
     arrNumbers : array[1..5] of integer;
     arrQuestion : array[1..20] of string;
@@ -47,6 +47,7 @@ type
     arrMix : array [1..4] of string;
     { Private declarations }
   public
+  total : integer;
     { Public declarations }
   end;
 
@@ -62,7 +63,7 @@ const
 implementation
 
 {$R *.dfm}
-uses Home_U, Login_U, New_U, Client_U;
+uses Home_U, Login_U, New_U, Client_U, Datamodule_U;
 /////////////////////////////////////TIMER/////////////////////////////////////////
 procedure TQuiz_Form.tmrClockTimer(Sender: TObject);
 begin
@@ -254,7 +255,12 @@ while (Oth3 = Oth) OR (Oth3 = Oth1) OR (Oth3 = Oth2) do
  if quizcount > 5 then
  begin
    tmrClock.Enabled := false;
-   showmessage('done ' + inttostr(total));
+   showmessage('Your score is: ' + inttostr(total));
+     if    Highscore(client_form.quiz, total) = true then
+     begin
+       ShowMessage('New High Score');
+     end;
+
    Client_form.show;
    Quiz_Form.hide;
  end;
@@ -281,6 +287,71 @@ end;
 procedure TQuiz_Form.btnDClick(Sender: TObject);
 begin
 CheckAnswer(button4);
+end;
+
+function TQuiz_Form.HighScore(game: string; score: integer): boolean;
+var
+tempName : string;
+tempScore : integer;
+begin
+////////////////
+result := false;
+////////////////
+///////////////////
+
+ Dmod.TableHighScore.First;
+
+    while NOT Dmod.TableHighScore.Eof  do
+    begin //while
+
+     if Dmod.TableHighScore['Quiz'] = game then
+        break;
+
+        Dmod.TableHighScore.Next;
+    end; //while
+      if Dmod.TableHighScore.Eof then
+      begin  //if
+      MessageDlg('Something is wrong, please contact the administrator.',mtError,[mbCancel],0);
+      exit;
+      end;
+    if Dmod.TableHighScore['User3 score'] < score then
+    begin
+      result := true;
+      dmod.TableHighScore.edit;
+      Dmod.TableHighScore['User3 score'] := score;
+      Dmod.TableHighScore['User3'] := Login_Form.sName;
+      if Dmod.TableHighScore['User3 score'] > Dmod.TableHighScore['User2 score'] then
+      begin
+        tempScore := Dmod.TableHighScore['User3 score'];
+        tempName := Dmod.TableHighScore['User3'];
+
+        Dmod.TableHighScore['User3 score'] := Dmod.TableHighScore['User2 score'];
+        Dmod.TableHighScore['User3'] := Dmod.TableHighScore['User2'];
+
+        Dmod.TableHighScore['User2 score'] := tempScore;
+        Dmod.TableHighScore['User2'] := tempName;
+
+          if Dmod.TableHighScore['User2 score'] > Dmod.TableHighScore['User1 score'] then
+          begin
+            ////////////////////////////////////
+            tempScore := Dmod.TableHighScore['User2 score'];
+            tempName := Dmod.TableHighScore['User2'];
+
+            Dmod.TableHighScore['User2 score'] := Dmod.TableHighScore['User1 score'];
+            Dmod.TableHighScore['User2'] := Dmod.TableHighScore['User1'];
+
+            Dmod.TableHighScore['User1 score'] := tempScore;
+            Dmod.TableHighScore['User1'] := tempName;
+            ////////////////////////////////////
+          end;
+
+      end;
+     Dmod.TableHighscore.Post;
+    end;
+
+
+//////////////// login_Form.sName
+////////////////
 end;
 
 end.

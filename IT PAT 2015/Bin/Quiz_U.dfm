@@ -72,7 +72,7 @@ object Quiz_Form: TQuiz_Form
     Left = 40
     Top = 64
     Width = 333
-    Height = 41
+    Height = 21
     Caption = '<Insert random question here>'
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
