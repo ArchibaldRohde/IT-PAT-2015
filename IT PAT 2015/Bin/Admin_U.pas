@@ -132,9 +132,12 @@ procedure TAdmin_Form.btnDeleteClick(Sender: TObject);
 var
 tfile : Textfile;
 slyn, line : string;
-k, i : integer;
+k, i, button : integer;
 arrQuiz : array [1..100] of string;
-begin //
+begin
+button := MessageDlg(('Are you shure you want to delete ' + LBquiz.Items[LBquiz.ItemIndex] + '?'),mtWarning,mbYesNoCancel,0); //
+    if button = mrYes then
+    begin
    Assignfile(tfile,'QuizList.txt');
 
    try  ///
@@ -170,7 +173,10 @@ begin //
    end;
    closefile(tfile);
    btnRefresh.Click;
-end; //
+end;
+end;
+
+ //
 end.
 
 
