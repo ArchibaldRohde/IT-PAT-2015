@@ -22,8 +22,8 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnPlayClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,12 +69,6 @@ begin
   Home_Form.Show;
 end;
 
-procedure TClient_Form.FormCreate(Sender: TObject);
-begin
-Quiz_Form.left := round((screen.WorkAreaWidth -600)/2);
-Quiz_Form.Top := round((screen.WorkAreaHeight -350)/2);
-end;
-
 procedure TClient_Form.btnRefreshClick(Sender: TObject);
 var
 tfile : Textfile;
@@ -93,6 +87,13 @@ Assignfile(Tfile, 'QuizList.txt');
       LBquiz.Items.Add(slyn);
     end;
 closefile(tfile);
+LBquiz.ItemIndex := 1;
+end;
+
+procedure TClient_Form.FormActivate(Sender: TObject);
+begin
+Client_Form.left := round((screen.WorkAreaWidth -600)/2);
+Client_Form.Top := round((screen.WorkAreaHeight -350)/2);
 end;
 
 end.

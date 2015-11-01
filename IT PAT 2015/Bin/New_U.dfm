@@ -1,6 +1,6 @@
 object New_Form: TNew_Form
-  Left = 1109
-  Top = 536
+  Left = 2119
+  Top = 400
   BorderStyle = bsNone
   Caption = 'New_Form'
   ClientHeight = 350

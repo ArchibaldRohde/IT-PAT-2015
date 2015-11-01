@@ -42,8 +42,8 @@ end;
 procedure TVideo_Form.FormCreate(Sender: TObject);
 begin
 btnClose.BringToFront;
-Video_Form.Left := 0;
-Video_Form.Top := 0;
+Video_Form.Left := round((screen.WorkAreaWidth-1280)/2);
+Video_Form.Top := round((screen.WorkAreaHeight-720)/2);
 Video_Form.ClientWidth := 1280;
 Video_Form.ClientHeight := 720;
   pnlScreen.Width := Video_Form.ClientWidth;

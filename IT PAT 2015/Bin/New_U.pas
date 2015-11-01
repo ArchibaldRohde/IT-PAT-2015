@@ -45,14 +45,28 @@ end;
 
 procedure TNew_Form.btnCreateUserClick(Sender: TObject);
 var
-sNewName, sNewPassword, sNewHint : String;
+sNewName, sNewPassword, sNewHint, sletter : String;
+c, i, k : integer;
 begin
   sNewName := edtName.Text;
   sNewPassword := edtPassword.text;
   sNewHint := edtHint.text;
+  ////////////////////
+  for k := 0 to length(sNewname) do
+  begin
+  sletter := sNewName[k];
+  val(sletter,c,i);
+  if i = 0 then
+  begin
+    showmessage('Username should only contain letters');
+    exit;
+  end;
+  end;
+  /////////////////
   if ((sNewPassword='') OR (sNewName= '') OR (sNewHint='')) then
   begin
     ShowMessage('All fields have not been filled in');
+    exit;
   end
   else
   begin

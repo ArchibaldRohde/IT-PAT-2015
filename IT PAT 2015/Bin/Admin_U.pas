@@ -67,6 +67,7 @@ Assignfile(Tfile, 'QuizList.txt');
       LBquiz.Items.Add(slyn);
     end;
 Closefile(tfile);
+LBquiz.ItemIndex := 1;
 end;
 
 procedure TAdmin_Form.btnAddClick(Sender: TObject);
@@ -124,6 +125,7 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
   WriteLn(tfile, QuizName);
   closefile(tfile);
   ///////////////////////////////////
+  btnRefresh.Click;
 end;
 
 procedure TAdmin_Form.btnDeleteClick(Sender: TObject);
@@ -167,7 +169,7 @@ begin //
      Writeln(tfile, arrQuiz[i]);
    end;
    closefile(tfile);
-
+   btnRefresh.Click;
 end; //
 end.
 
