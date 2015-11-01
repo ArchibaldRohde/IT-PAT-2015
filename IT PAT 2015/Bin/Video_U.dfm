@@ -1,6 +1,6 @@
 object Video_Form: TVideo_Form
-  Left = 215
-  Top = 227
+  Left = 180
+  Top = 614
   BorderStyle = bsNone
   Caption = 'Video_Form'
   ClientHeight = 636
@@ -19,9 +19,9 @@ object Video_Form: TVideo_Form
   object btnClose: TBitBtn
     Left = 0
     Top = 0
-    Width = 33
+    Width = 49
     Height = 25
-    Caption = ' '
+    Caption = 'Skip'
     TabOrder = 0
     OnClick = btnCloseClick
     Kind = bkAbort

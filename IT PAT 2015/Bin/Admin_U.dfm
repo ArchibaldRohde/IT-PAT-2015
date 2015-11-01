@@ -1,6 +1,6 @@
 object Admin_Form: TAdmin_Form
-  Left = 818
-  Top = 281
+  Left = 2055
+  Top = 349
   BorderStyle = bsNone
   Caption = 'Admin_Form'
   ClientHeight = 350
@@ -98,6 +98,7 @@ object Admin_Form: TAdmin_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnClick = btnDeleteClick
     BackColor = clOlive
     HoverColor = clTeal
   end

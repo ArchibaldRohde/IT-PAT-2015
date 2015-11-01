@@ -20,6 +20,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
+    procedure btnDeleteClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +66,7 @@ Assignfile(Tfile, 'QuizList.txt');
       readln(Tfile, slyn);
       LBquiz.Items.Add(slyn);
     end;
-
+Closefile(tfile);
 end;
 
 procedure TAdmin_Form.btnAddClick(Sender: TObject);
@@ -125,4 +126,51 @@ QuizName := Inputbox('Name of New Quiz','Name of New Quiz', 'Name of New Quiz');
   ///////////////////////////////////
 end;
 
+procedure TAdmin_Form.btnDeleteClick(Sender: TObject);
+var
+tfile : Textfile;
+slyn, line : string;
+k, i : integer;
+arrQuiz : array [1..100] of string;
+begin //
+   Assignfile(tfile,'QuizList.txt');
+
+   try  ///
+     reset(tfile);
+   except
+    MessageDlg('"QuizList.txt" either exists or does not exist... Something is terribly wrong! Call your technician!',mtError,[mbCancel],0);
+    exit;
+   end; ///
+   k := 0;
+   while NOT eof(Tfile) do
+   begin  ////
+     inc(k);
+     readln(tfile, slyn);
+     if NOT (slyn = LBquiz.Items[LBquiz.ItemIndex]) then
+     begin  /////
+       arrQuiz[k] := slyn;
+     end
+     else
+     begin
+       k := k-1;
+       line := 'quizzes\' + LBquiz.Items[LBquiz.ItemIndex] + '.txt';
+       Deletefile(line);
+     end;   /////
+
+   end;  ////
+   closefile(tfile);
+   Assignfile(tfile, 'QuizList.txt');
+   reWrite(tfile);
+
+   for i := 1 to k do
+   begin
+     Writeln(tfile, arrQuiz[i]);
+   end;
+   closefile(tfile);
+
+end; //
 end.
+
+
+
+
