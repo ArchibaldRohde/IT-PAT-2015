@@ -99,7 +99,7 @@ end;
 
 procedure TClient_Form.btnHighClick(Sender: TObject);
 begin
-//
+Dmod.TableHighScore.First;
  while NOT Dmod.TableHighScore.Eof  do
     begin //while
 

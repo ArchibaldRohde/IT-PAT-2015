@@ -51,7 +51,16 @@ begin
   sNewName := edtName.Text;
   sNewPassword := edtPassword.text;
   sNewHint := edtHint.text;
-  ////////////////////
+
+  if ((sNewPassword='') OR (sNewName= '') OR (sNewHint='')) then
+  begin
+    ShowMessage('All fields have not been filled in');
+    exit;
+  end
+  else
+  begin
+  //
+   ////////////////////
   for k := 0 to length(sNewname) do
   begin
   sletter := sNewName[k];
@@ -63,14 +72,6 @@ begin
   end;
   end;
   /////////////////
-  if ((sNewPassword='') OR (sNewName= '') OR (sNewHint='')) then
-  begin
-    ShowMessage('All fields have not been filled in');
-    exit;
-  end
-  else
-  begin
-  //
   Dmod.TableUser.First;
   while NOT Dmod.TableUser.EOF do
   begin
