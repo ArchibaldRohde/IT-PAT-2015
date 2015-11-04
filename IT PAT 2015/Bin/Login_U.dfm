@@ -1,6 +1,6 @@
 object Login_Form: TLogin_Form
-  Left = 2330
-  Top = 463
+  Left = 1291
+  Top = 709
   BorderStyle = bsNone
   Caption = 'Login_Form'
   ClientHeight = 350

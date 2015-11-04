@@ -24,6 +24,7 @@ type
     procedure btnRefreshClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure btnHighClick(Sender: TObject);
+    procedure btnCreditsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -106,6 +107,12 @@ ShowMessage('The highscores for ' + DMod.TableHighScore['Quiz'] + ' are: ' + #10
                          '2) ' + DMod.TableHighScore['User2'] + ' with: ' + floattostr(DMod.TableHighScore['User2 score']) + '/100' + #10  +
                          '3) ' + DMod.TableHighScore['User3'] + ' with: ' + floattostr(DMod.TableHighScore['User3 score']) + '/100');
 
+end;
+
+procedure TClient_Form.btnCreditsClick(Sender: TObject);
+begin
+//
+ShowMessage('Credits have not been written yet, please try again with the next update (;');
 end;
 
 end.

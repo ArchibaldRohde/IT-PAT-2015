@@ -1,6 +1,6 @@
 object Admin_Form: TAdmin_Form
-  Left = 2055
-  Top = 349
+  Left = 2038
+  Top = 661
   BorderStyle = bsNone
   Caption = 'Admin_Form'
   ClientHeight = 350

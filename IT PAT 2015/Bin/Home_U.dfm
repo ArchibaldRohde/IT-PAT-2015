@@ -1,6 +1,6 @@
 object Home_Form: THome_Form
-  Left = 915
-  Top = 521
+  Left = 1273
+  Top = 761
   BorderStyle = bsNone
   Caption = 'Home_Form'
   ClientHeight = 258
@@ -41,14 +41,27 @@ object Home_Form: THome_Form
     Font.Style = []
     ParentFont = False
   end
+  object lblTheme: TLabel
+    Left = 536
+    Top = 208
+    Width = 54
+    Height = 18
+    Caption = 'Theme:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object btnLogin: TColorButton
     Left = 128
     Top = 144
     Width = 113
     Height = 57
     Caption = 'Login'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
     Font.Height = -29
     Font.Name = 'Tahoma'
     Font.Style = []
@@ -56,6 +69,7 @@ object Home_Form: THome_Form
     TabOrder = 0
     OnClick = btnLoginClick
     BackColor = clOlive
+    ForeColor = clBackground
     HoverColor = clTeal
   end
   object btnAdmin: TColorButton
@@ -101,5 +115,24 @@ object Home_Form: THome_Form
     TabOrder = 3
     OnClick = btnCloseClick
     Kind = bkAbort
+  end
+  object btnOlive: TColorButton
+    Left = 568
+    Top = 232
+    Width = 27
+    Height = 25
+    TabOrder = 4
+    BackColor = clOlive
+    HoverColor = clTeal
+  end
+  object btnBlack: TColorButton
+    Left = 533
+    Top = 233
+    Width = 27
+    Height = 25
+    TabOrder = 5
+    OnClick = btnBlackClick
+    BackColor = clBlack
+    HoverColor = clTeal
   end
 end

@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 699
-  Top = 428
+  Left = 1973
+  Top = 589
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350
@@ -138,6 +138,7 @@ object Client_Form: TClient_Form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnClick = btnCreditsClick
     BackColor = clOlive
     HoverColor = clTeal
   end
