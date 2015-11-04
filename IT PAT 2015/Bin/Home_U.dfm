@@ -122,6 +122,7 @@ object Home_Form: THome_Form
     Width = 27
     Height = 25
     TabOrder = 4
+    OnClick = btnOliveClick
     BackColor = clOlive
     HoverColor = clTeal
   end
