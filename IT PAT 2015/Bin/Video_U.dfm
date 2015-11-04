@@ -1,6 +1,6 @@
 object Video_Form: TVideo_Form
-  Left = 277
-  Top = 646
+  Left = 289
+  Top = 364
   BorderStyle = bsNone
   Caption = 'Video_Form'
   ClientHeight = 636

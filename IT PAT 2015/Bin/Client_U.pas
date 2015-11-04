@@ -16,10 +16,9 @@ type
     lblhand2: TLabel;
     btnHigh: TColorButton;
     lblhand1: TLabel;
-    btnMy: TColorButton;
+    btnCredits: TColorButton;
     btnClose: TBitBtn;
     btnRefresh: TColorButton;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnPlayClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
@@ -40,12 +39,6 @@ implementation
 uses Home_U, Quiz_U, Datamodule_U;
 
 {$R *.dfm}
-
-procedure TClient_Form.FormClose(Sender: TObject;
-  var Action: TCloseAction);
-begin
-Home_Form.Show;
-end;
 
 procedure TClient_Form.btnPlayClick(Sender: TObject);
 var

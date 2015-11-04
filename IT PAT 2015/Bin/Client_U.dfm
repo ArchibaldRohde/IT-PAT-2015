@@ -1,6 +1,6 @@
 object Client_Form: TClient_Form
-  Left = 1976
-  Top = 433
+  Left = 699
+  Top = 428
   BorderStyle = bsNone
   Caption = 'Client_Form'
   ClientHeight = 350
@@ -13,7 +13,6 @@ object Client_Form: TClient_Form
   Font.Style = []
   OldCreateOrder = False
   OnActivate = FormActivate
-  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object lblPOPQuiz: TLabel
@@ -126,12 +125,12 @@ object Client_Form: TClient_Form
     BackColor = clOlive
     HoverColor = clTeal
   end
-  object btnMy: TColorButton
+  object btnCredits: TColorButton
     Left = 408
     Top = 112
     Width = 121
     Height = 33
-    Caption = 'My scores'
+    Caption = 'Credits'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -21

@@ -63,8 +63,11 @@ end;
 
 procedure TVideo_Form.tmrVidTimer(Sender: TObject);
 begin
-  Video_Form.Hide;
+if Video_form.Visible = true then
+begin
+   Video_Form.Hide;
   Home_Form.Show;
+end;
   tmrVid.enabled := false;
 end;
 

@@ -1,6 +1,6 @@
 object New_Form: TNew_Form
-  Left = 2119
-  Top = 400
+  Left = 1969
+  Top = 432
   BorderStyle = bsNone
   Caption = 'New_Form'
   ClientHeight = 350
@@ -12,7 +12,6 @@ object New_Form: TNew_Form
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

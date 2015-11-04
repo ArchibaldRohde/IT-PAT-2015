@@ -20,7 +20,6 @@ type
     lblHint: TLabel;
     edtHint: TEdit;
     btnClose: TBitBtn;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCreateUserClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -37,11 +36,6 @@ implementation
 uses Quiz_U, Home_U, Login_U;
 
 {$R *.dfm}
-
-procedure TNew_Form.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-Home_Form.Show;
-end;
 
 procedure TNew_Form.btnCreateUserClick(Sender: TObject);
 var
@@ -75,7 +69,7 @@ begin
   Dmod.TableUser.First;
   while NOT Dmod.TableUser.EOF do
   begin
-    if Dmod.TableUser['Username'] = sNewName then
+    if uppercase(Dmod.TableUser['Username']) = Uppercase(sNewName) then
     break;
     Dmod.TableUser.Next;
   end;

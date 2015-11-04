@@ -19,7 +19,6 @@ type
     imgMan: TImage;
     imgWoman: TImage;
     btnClose: TBitBtn;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnLoginClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -38,11 +37,6 @@ implementation
 uses Quiz_U, Home_U, New_U, Client_U, Admin_U;
 
 {$R *.dfm}
-
-procedure TLogin_Form.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-Home_Form.Show;
-end;
 
 procedure TLogin_Form.btnLoginClick(Sender: TObject);
 begin  //pro
